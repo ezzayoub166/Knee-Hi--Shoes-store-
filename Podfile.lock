@@ -1,0 +1,20 @@
+PODS:
+  - BEMCheckBox (1.4.1)
+  - IQDropDownTextField (4.0.4)
+
+DEPENDENCIES:
+  - BEMCheckBox
+  - IQDropDownTextField
+
+SPEC REPOS:
+  trunk:
+    - BEMCheckBox
+    - IQDropDownTextField
+
+SPEC CHECKSUMS:
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  IQDropDownTextField: 3cce52d039b32c6cfa44c6a7603e949c1df4c7c3
+
+PODFILE CHECKSUM: f6cc27695296c9ad47184d0143f9d02d0b6a1d8b
+
+COCOAPODS: 1.15.2

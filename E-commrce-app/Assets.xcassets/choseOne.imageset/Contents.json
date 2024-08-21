@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "choseOne.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

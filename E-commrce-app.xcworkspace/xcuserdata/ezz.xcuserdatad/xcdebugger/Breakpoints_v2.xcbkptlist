@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3C10238D-5F22-4243-AF2C-162C362C5738"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FF5C555-D14B-4687-8A00-C3508F031889"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "login(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1FF5C555-D14B-4687-8A00-C3508F031889 - a75c97bb72ca42e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "1FF5C555-D14B-4687-8A00-C3508F031889 - a75c97bb72ca42a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31A12C3E-2AF6-49B3-85B9-970CF681652A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "login(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "31A12C3E-2AF6-49B3-85B9-970CF681652A - a75c97bb72ca4223"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "892">
+               </Location>
+               <Location
+                  uuid = "31A12C3E-2AF6-49B3-85B9-970CF681652A - a75c97bb72ca41fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "892">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1892D558-DCFD-4AB2-9C5B-517A3136F183"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "login(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1892D558-DCFD-4AB2-9C5B-517A3136F183 - a75c97bb72ca41fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1524">
+               </Location>
+               <Location
+                  uuid = "1892D558-DCFD-4AB2-9C5B-517A3136F183 - a75c97bb72ca41fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "1464">
+               </Location>
+               <Location
+                  uuid = "1892D558-DCFD-4AB2-9C5B-517A3136F183 - a75c97bb72ca41bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "1464">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DE32998-94D6-43C1-8F42-65869B49DC28"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "login(email:password:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0DE32998-94D6-43C1-8F42-65869B49DC28 - a75c97bb72ca40b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "1200">
+               </Location>
+               <Location
+                  uuid = "0DE32998-94D6-43C1-8F42-65869B49DC28 - a75c97bb72ca4094"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "1784">
+               </Location>
+               <Location
+                  uuid = "0DE32998-94D6-43C1-8F42-65869B49DC28 - a75c97bb72ca4056"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FirebaseAuth.AuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.login(email: Swift.String, password: Swift.String, completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1784">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38DF6D88-5C03-45F9-BA0A-3EA1749DB86A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Extenstion/Constants.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "uploadCategoryData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "38DF6D88-5C03-45F9-BA0A-3EA1749DB86A - 3b642167efad8255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.ConstantsFunctions.uploadCategoryData() -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "38DF6D88-5C03-45F9-BA0A-3EA1749DB86A - 744b1b61e2cef6db"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF86E65B-C3CE-4473-986B-88D3E36E859E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Extenstion/Constants.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "uploadCategoryData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DF86E65B-C3CE-4473-986B-88D3E36E859E - 3b642167efad82b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.ConstantsFunctions.uploadCategoryData() -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "DF86E65B-C3CE-4473-986B-88D3E36E859E - 744b1b61e2cef676"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "87"
+                  endingLineNumber = "87"
+                  offsetFromSymbolStart = "336">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D02B4407-1BDE-493E-9849-7783790C399A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Extenstion/Constants.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "uploadCategoryData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D02B4407-1BDE-493E-9849-7783790C399A - 69fb084fcd0e7883"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "620">
+               </Location>
+               <Location
+                  uuid = "D02B4407-1BDE-493E-9849-7783790C399A - fa588b467cbb68e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "D02B4407-1BDE-493E-9849-7783790C399A - 55175ef9a726c5bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "D02B4407-1BDE-493E-9849-7783790C399A - 55175ef9a726c485"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "D02B4407-1BDE-493E-9849-7783790C399A - 235d8bdcb2cb6284"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F2D1403E-394A-4DDB-AE3B-7BD9E6F6F51F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Extenstion/Constants.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "uploadCategoryData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F2D1403E-394A-4DDB-AE3B-7BD9E6F6F51F - 69fb084fcd0e7960"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  uuid = "F2D1403E-394A-4DDB-AE3B-7BD9E6F6F51F - 55175ef9a726c566"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "720">
+               </Location>
+               <Location
+                  uuid = "F2D1403E-394A-4DDB-AE3B-7BD9E6F6F51F - 235d8bdcb2cb6367"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for static E_commrce_app.ConstantsFunctions.uploadCategoryData() async -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Extenstion/Constants.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FEC53C2-9EAB-4A15-B2F9-164BB9A942AD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/controllers/DetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2FEC53C2-9EAB-4A15-B2F9-164BB9A942AD - fdea9a1cbdde8297"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "278"
+                  endingLineNumber = "278"
+                  offsetFromSymbolStart = "3008">
+               </Location>
+               <Location
+                  uuid = "2FEC53C2-9EAB-4A15-B2F9-164BB9A942AD - fdea9a1cbdde8297"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "278"
+                  endingLineNumber = "278"
+                  offsetFromSymbolStart = "2092">
+               </Location>
+               <Location
+                  uuid = "2FEC53C2-9EAB-4A15-B2F9-164BB9A942AD - b3a2062b56784fc2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.setupView() -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "226"
+                  endingLineNumber = "226"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "2FEC53C2-9EAB-4A15-B2F9-164BB9A942AD - fdea9a1cbdde8b0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "220"
+                  endingLineNumber = "220"
+                  offsetFromSymbolStart = "1536">
+               </Location>
+               <Location
+                  uuid = "2FEC53C2-9EAB-4A15-B2F9-164BB9A942AD - fdea9a1cbdde8b89"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "2096">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E72D454F-6D2A-453F-B8CB-2E60AF7751A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/controllers/DetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E72D454F-6D2A-453F-B8CB-2E60AF7751A3 - fdea9a1cbdde9c28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "289"
+                  endingLineNumber = "289"
+                  offsetFromSymbolStart = "3396">
+               </Location>
+               <Location
+                  uuid = "E72D454F-6D2A-453F-B8CB-2E60AF7751A3 - c28b012d9174e335"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in E_commrce_app.DetailsVC.setupView() -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "E72D454F-6D2A-453F-B8CB-2E60AF7751A3 - fdea9a1cbdde84a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "231"
+                  endingLineNumber = "231"
+                  offsetFromSymbolStart = "2956">
+               </Location>
+               <Location
+                  uuid = "E72D454F-6D2A-453F-B8CB-2E60AF7751A3 - fdea9a1cbdde8522"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "E_commrce_app.DetailsVC.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/controllers/DetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "3400">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F6868CB-78C1-4688-B3F7-6DEE089ADF5B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "saveShoseINDATABASE(model:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8F6868CB-78C1-4688-B3F7-6DEE089ADF5B - e3d8e5a70271b516"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static E_commrce_app.Requests.saveShoseINDATABASE(model: E_commrce_app.Shose_model) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "8F6868CB-78C1-4688-B3F7-6DEE089ADF5B - 89ba4932aea060da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static E_commrce_app.Requests.saveShoseINDATABASE(model: E_commrce_app.Shose_model) -&gt; ()"
+                  moduleName = "E-commrce-app"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ezz/Desktop/E-commrce-app/E-commrce-app/utils/Requests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E69A6ED-64BE-445F-BDA8-7B4154CF13A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "E-commrce-app/utils/Requests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "saveShoseINDATABASE(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

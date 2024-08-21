@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomSearchBar" customModule="Shoes_EcommApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="IIX-vH-gB3"/>
+                <outlet property="seatchtxtFiled" destination="Def-tJ-3O7" id="uWU-cl-bQF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="110"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BM-dZ-aHS">
+                    <rect key="frame" x="0.0" y="0.0" width="500" height="110"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bwW-D8-N3J">
+                            <rect key="frame" x="0.0" y="0.0" width="500" height="110"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fH-p7-srM">
+                                    <rect key="frame" x="0.0" y="39" width="32" height="32"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSearch" translatesAutoresizingMaskIntoConstraints="NO" id="PYS-Tl-ZF7">
+                                            <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="PYS-Tl-ZF7" firstAttribute="top" secondItem="5fH-p7-srM" secondAttribute="top" id="Fhp-0r-uP9"/>
+                                        <constraint firstAttribute="bottom" secondItem="PYS-Tl-ZF7" secondAttribute="bottom" id="L4G-Hu-VeN"/>
+                                        <constraint firstAttribute="width" secondItem="5fH-p7-srM" secondAttribute="height" multiplier="1:1" id="RcY-ND-ORt"/>
+                                        <constraint firstItem="PYS-Tl-ZF7" firstAttribute="leading" secondItem="5fH-p7-srM" secondAttribute="leading" id="Sck-X0-A9e"/>
+                                        <constraint firstAttribute="trailing" secondItem="PYS-Tl-ZF7" secondAttribute="trailing" id="hG5-9Y-LbP"/>
+                                        <constraint firstAttribute="height" constant="32" id="hSr-dF-7YP"/>
+                                    </constraints>
+                                </view>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Looking for shoes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Def-tJ-3O7">
+                                    <rect key="frame" x="42" y="39" width="458" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Def-tJ-3O7" firstAttribute="bottom" secondItem="PYS-Tl-ZF7" secondAttribute="bottom" id="gs5-6k-QJX"/>
+                                <constraint firstItem="Def-tJ-3O7" firstAttribute="top" secondItem="PYS-Tl-ZF7" secondAttribute="top" id="tqn-t0-WEX"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bwW-D8-N3J" firstAttribute="top" secondItem="8BM-dZ-aHS" secondAttribute="top" id="09u-KK-sl0"/>
+                        <constraint firstAttribute="bottom" secondItem="bwW-D8-N3J" secondAttribute="bottom" id="3pB-A6-pex"/>
+                        <constraint firstItem="bwW-D8-N3J" firstAttribute="leading" secondItem="8BM-dZ-aHS" secondAttribute="leading" id="5DQ-tM-MRK"/>
+                        <constraint firstAttribute="trailing" secondItem="bwW-D8-N3J" secondAttribute="trailing" id="Nym-bO-Jzt"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="8BM-dZ-aHS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OZr-mA-Rhn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8BM-dZ-aHS" secondAttribute="trailing" id="btU-eg-Tng"/>
+                <constraint firstAttribute="bottom" secondItem="8BM-dZ-aHS" secondAttribute="bottom" id="c9g-3i-18i"/>
+                <constraint firstItem="8BM-dZ-aHS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zMy-17-5Z5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="85.496183206106863" y="-138.02816901408451"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icSearch" width="16" height="16"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

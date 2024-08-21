@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AirbnbCereal_W_Md.otf">
+            <string>AirbnbCerealWMd</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomAlertVC" customModule="Shoes_EcommApp" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGG-qC-NNo">
+                    <rect key="frame" x="20" y="229.33333333333334" width="353" height="393.33333333333326"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="njA-5B-r6f">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="393.33333333333331"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-3J-ZrO">
+                                    <rect key="frame" x="109.66666666666666" y="39.999999999999972" width="134" height="134"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSucess" translatesAutoresizingMaskIntoConstraints="NO" id="JU1-1I-1LL">
+                                            <rect key="frame" x="0.0" y="0.0" width="134" height="134"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.87450980392156863" green="0.93725490196078431" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="JU1-1I-1LL" firstAttribute="leading" secondItem="cKe-3J-ZrO" secondAttribute="leading" id="0Rz-dd-ae0"/>
+                                        <constraint firstAttribute="width" secondItem="cKe-3J-ZrO" secondAttribute="height" multiplier="1:1" id="3TO-sM-XxI"/>
+                                        <constraint firstAttribute="trailing" secondItem="JU1-1I-1LL" secondAttribute="trailing" id="F4B-Xp-iIa"/>
+                                        <constraint firstAttribute="height" constant="134" id="Uos-rQ-k4A"/>
+                                        <constraint firstItem="JU1-1I-1LL" firstAttribute="top" secondItem="cKe-3J-ZrO" secondAttribute="top" id="Wsl-VP-ccq"/>
+                                        <constraint firstAttribute="bottom" secondItem="JU1-1I-1LL" secondAttribute="bottom" id="mg7-0m-lFr"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="67"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Payment Is Successful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wT-xT-eix">
+                                    <rect key="frame" x="62.333333333333329" y="197.99999999999997" width="228.66666666666669" height="81.333333333333343"/>
+                                    <fontDescription key="fontDescription" name="AirbnbCerealWMd" family="AirbnbCereal_W_Md" pointSize="18"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vfn-s4-ZnK">
+                                    <rect key="frame" x="69" y="303.33333333333326" width="215" height="50"/>
+                                    <color key="backgroundColor" red="0.35686274509999999" green="0.61960784310000006" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="215" id="DMU-wD-cUK"/>
+                                        <constraint firstAttribute="height" constant="50" id="j1z-jb-Cw9"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Back To Shopping">
+                                        <fontDescription key="titleFontDescription" name="AirbnbCerealWBd" family="AirbnbCereal_W_Bd" pointSize="17"/>
+                                        <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="backToShoppingBtn:" destination="-1" eventType="touchUpInside" id="yp4-PO-tE6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="40" leading="60" bottom="40" trailing="60"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="njA-5B-r6f" secondAttribute="bottom" id="Mpj-co-d19"/>
+                        <constraint firstItem="njA-5B-r6f" firstAttribute="top" secondItem="sGG-qC-NNo" secondAttribute="top" id="PCo-Ak-4TB"/>
+                        <constraint firstAttribute="trailing" secondItem="njA-5B-r6f" secondAttribute="trailing" id="bfV-OR-pNd"/>
+                        <constraint firstItem="njA-5B-r6f" firstAttribute="leading" secondItem="sGG-qC-NNo" secondAttribute="leading" id="dda-46-ZJF"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.10196078431372549" green="0.14509803921568626" blue="0.18823529411764706" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sGG-qC-NNo" secondAttribute="trailing" constant="20" id="2Eu-fp-KEA"/>
+                <constraint firstItem="sGG-qC-NNo" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="375/812" id="Alh-rb-SeM"/>
+                <constraint firstItem="sGG-qC-NNo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DEL-ly-DUC"/>
+                <constraint firstItem="sGG-qC-NNo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JcG-bl-jT1"/>
+                <constraint firstItem="sGG-qC-NNo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="peM-hF-YEi"/>
+            </constraints>
+            <point key="canvasLocation" x="13" y="-1"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icSucess" width="86" height="86"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

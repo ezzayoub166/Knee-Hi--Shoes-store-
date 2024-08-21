@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AirbnbCereal_W_Lt.otf">
+            <string>AirbnbCerealWLt</string>
+        </array>
+        <array key="AirbnbCereal_W_Md.otf">
+            <string>AirbnbCerealWMd</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="cartItemTCell" customModule="Shoes_EcommApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="355" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F5-PF-1Ed">
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="82"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yH-30-CiN">
+                                <rect key="frame" x="0.0" y="0.0" width="355" height="82"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdn-kD-vlU">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="82"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choseOne" translatesAutoresizingMaskIntoConstraints="NO" id="Dx4-Tx-MZr">
+                                                <rect key="frame" x="5" y="10" width="67" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Dx4-Tx-MZr" secondAttribute="height" multiplier="1:1" id="9nM-gh-gDx"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Dx4-Tx-MZr" firstAttribute="leading" secondItem="hdn-kD-vlU" secondAttribute="leading" constant="5" id="0Ce-ET-7Id"/>
+                                            <constraint firstAttribute="trailing" secondItem="Dx4-Tx-MZr" secondAttribute="trailing" constant="5" id="4wM-G3-2GY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dx4-Tx-MZr" secondAttribute="bottom" constant="5" id="Xes-58-Q8w"/>
+                                            <constraint firstAttribute="height" constant="82" id="dmy-BL-Ipb"/>
+                                            <constraint firstItem="Dx4-Tx-MZr" firstAttribute="top" secondItem="hdn-kD-vlU" secondAttribute="top" constant="10" id="iJF-w4-uSU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fam-HN-zbZ">
+                                        <rect key="frame" x="77" y="0.0" width="278" height="82"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Swa-XA-b6f">
+                                                <rect key="frame" x="16" y="10" width="257" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nike Club Max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ba-Oh-TMH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106.66666666666667" height="21"/>
+                                                        <fontDescription key="fontDescription" name="AirbnbCerealWMd" family="AirbnbCereal_W_Md" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XXL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kc-7k-IY6">
+                                                        <rect key="frame" x="230.66666666666669" y="0.0" width="26.333333333333314" height="21"/>
+                                                        <fontDescription key="fontDescription" name="AirbnbCerealWMd" family="AirbnbCereal_W_Md" pointSize="14"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$64.95" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ls-3e-x4e">
+                                                <rect key="frame" x="16" y="31" width="257" height="22"/>
+                                                <fontDescription key="fontDescription" name="AirbnbCerealWMd" family="AirbnbCereal_W_Md" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-YS-YnT">
+                                                <rect key="frame" x="16" y="53" width="257" height="24"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="n7v-Gj-mhu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="24"/>
+                                                        <subviews>
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsz-Gx-PFQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmR-Dy-WYC">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="dec" title=" "/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="pmR-Dy-WYC" firstAttribute="leading" secondItem="Dsz-Gx-PFQ" secondAttribute="leading" id="KJj-xT-KU7"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="pmR-Dy-WYC" secondAttribute="trailing" id="SvJ-vq-rIT"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="pmR-Dy-WYC" secondAttribute="bottom" id="eVM-Q9-dp1"/>
+                                                                    <constraint firstAttribute="width" secondItem="Dsz-Gx-PFQ" secondAttribute="height" multiplier="1:1" id="fO8-QM-L5e"/>
+                                                                    <constraint firstAttribute="width" constant="24" id="fmo-g6-ffF"/>
+                                                                    <constraint firstItem="pmR-Dy-WYC" firstAttribute="top" secondItem="Dsz-Gx-PFQ" secondAttribute="top" id="haH-Fb-Dbd"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="14"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fii-bi-23w">
+                                                                <rect key="frame" x="34" y="0.0" width="7" height="24"/>
+                                                                <fontDescription key="fontDescription" name="AirbnbCerealWLt" family="AirbnbCereal_W_Lt" pointSize="17"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpB-PU-RqM">
+                                                                <rect key="frame" x="51" y="0.0" width="24" height="24"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwV-TH-Dm5">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" image="ince" title=" "/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.35686274509999999" green="0.61960784310000006" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="JwV-TH-Dm5" firstAttribute="leading" secondItem="LpB-PU-RqM" secondAttribute="leading" id="ce2-iR-LwW"/>
+                                                                    <constraint firstAttribute="width" secondItem="LpB-PU-RqM" secondAttribute="height" multiplier="1:1" id="nwu-h8-X1H"/>
+                                                                    <constraint firstAttribute="width" constant="24" id="pWf-5X-7pJ"/>
+                                                                    <constraint firstItem="JwV-TH-Dm5" firstAttribute="top" secondItem="LpB-PU-RqM" secondAttribute="top" id="qWb-Wl-bpf"/>
+                                                                    <constraint firstAttribute="width" secondItem="LpB-PU-RqM" secondAttribute="height" multiplier="1:1" id="sVv-P2-k2Z"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="JwV-TH-Dm5" secondAttribute="bottom" id="utf-Nt-DjC"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="JwV-TH-Dm5" secondAttribute="trailing" id="zli-r6-WIG"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="14"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbb-jw-za1">
+                                                        <rect key="frame" x="204.33333333333331" y="0.0" width="52.666666666666686" height="24"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="icDelete" title=" "/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="16" bottom="5" trailing="5"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4yH-30-CiN" secondAttribute="trailing" id="KxT-My-gN4"/>
+                            <constraint firstAttribute="bottom" secondItem="4yH-30-CiN" secondAttribute="bottom" id="bX2-tz-hI2"/>
+                            <constraint firstItem="4yH-30-CiN" firstAttribute="leading" secondItem="4F5-PF-1Ed" secondAttribute="leading" id="s3T-cz-8Xq"/>
+                            <constraint firstItem="4yH-30-CiN" firstAttribute="top" secondItem="4F5-PF-1Ed" secondAttribute="top" id="wZw-9d-kHM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4F5-PF-1Ed" secondAttribute="bottom" id="Itf-Iz-l32"/>
+                    <constraint firstAttribute="trailing" secondItem="4F5-PF-1Ed" secondAttribute="trailing" id="UcA-Bv-YvR"/>
+                    <constraint firstItem="4F5-PF-1Ed" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hmk-7f-jRH"/>
+                    <constraint firstItem="4F5-PF-1Ed" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="t6E-YT-Wwu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <point key="canvasLocation" x="98.473282442748086" y="-14.788732394366198"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="choseOne" width="157" height="113"/>
+        <image name="dec" width="10" height="2"/>
+        <image name="icDelete" width="24" height="24"/>
+        <image name="ince" width="10" height="10"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

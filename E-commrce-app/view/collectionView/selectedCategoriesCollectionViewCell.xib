@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AirbnbCereal_W_Blk.otf">
+            <string>AirbnbCerealWBlk</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="selectedCategoriesCollectionViewCell" customModule="E_commrce_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="119" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="119" height="44"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kF-bF-2dh">
+                        <rect key="frame" x="0.0" y="0.0" width="119" height="44"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="G4D-3c-k6d">
+                                <rect key="frame" x="0.0" y="0.0" width="119" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3u6-7H-8Ut">
+                                        <rect key="frame" x="16" y="6" width="87" height="32"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnZ-yy-iAT">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icNike" translatesAutoresizingMaskIntoConstraints="NO" id="7jN-9x-zPA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="qnZ-yy-iAT" secondAttribute="height" multiplier="1:1" id="2IB-Q2-Kmd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7jN-9x-zPA" secondAttribute="trailing" id="Wqv-Jz-IFI"/>
+                                                    <constraint firstItem="7jN-9x-zPA" firstAttribute="leading" secondItem="qnZ-yy-iAT" secondAttribute="leading" id="XBn-j9-Rsz"/>
+                                                    <constraint firstAttribute="height" constant="32" id="o2w-cV-KRZ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="7jN-9x-zPA" secondAttribute="bottom" id="rtT-Br-nV2"/>
+                                                    <constraint firstItem="7jN-9x-zPA" firstAttribute="top" secondItem="qnZ-yy-iAT" secondAttribute="top" id="v8a-xW-exn"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="O0K-Jf-puv">
+                                                <rect key="frame" x="37" y="0.0" width="50" height="32"/>
+                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="6" leading="6" bottom="6" trailing="6"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G4D-3c-k6d" firstAttribute="top" secondItem="0kF-bF-2dh" secondAttribute="top" id="Frr-C0-MV4"/>
+                            <constraint firstAttribute="bottom" secondItem="G4D-3c-k6d" secondAttribute="bottom" id="SZh-ts-WWK"/>
+                            <constraint firstItem="G4D-3c-k6d" firstAttribute="leading" secondItem="0kF-bF-2dh" secondAttribute="leading" id="Yek-3I-P1v"/>
+                            <constraint firstAttribute="trailing" secondItem="G4D-3c-k6d" secondAttribute="trailing" id="Zt0-tj-lM6"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="0kF-bF-2dh" secondAttribute="trailing" id="5tG-QG-HAg"/>
+                <constraint firstItem="0kF-bF-2dh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CYl-Cb-mCs"/>
+                <constraint firstAttribute="bottom" secondItem="0kF-bF-2dh" secondAttribute="bottom" id="Lud-yQ-Vg4"/>
+                <constraint firstItem="0kF-bF-2dh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="o50-Og-gqh"/>
+            </constraints>
+            <size key="customSize" width="217" height="44"/>
+            <connections>
+                <outlet property="image" destination="7jN-9x-zPA" id="jlr-tb-crA"/>
+                <outlet property="mainView" destination="0kF-bF-2dh" id="YbN-Xx-4zg"/>
+                <outlet property="titlelbl" destination="O0K-Jf-puv" id="HDN-v2-LPf"/>
+            </connections>
+            <point key="canvasLocation" x="205.34351145038167" y="17.605633802816904"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icNike" width="26" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
