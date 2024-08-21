@@ -55,6 +55,8 @@ extension MainAdminViewController {
     
 }
 
+//MARK: - Extension for other functions.
+
 extension MainAdminViewController {
     private func setupTABLEVIEW(){
         sizesTableView.dataSource = self
