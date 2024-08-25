@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct RadioModle {
+struct RadioModle  {
     var id : Int
     var name : String
     var codeColor : String?

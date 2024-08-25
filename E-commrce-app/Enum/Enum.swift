@@ -14,7 +14,7 @@ enum TypeSizeEnum : String {
 }
 
 
-enum Shose_brands : String {
+enum Shose_brands : String , CaseIterable {
     case ADDIDS = "Adidas"
     case NIKE = "Nike"
     case PUMA = "Puma"
@@ -23,7 +23,7 @@ enum Shose_brands : String {
  }
 
 
-enum GenderType : String {
+ enum Gender : String , CaseIterable {
     case Male = "Male"
     case Female = "Female"
     case NonBinary = "Non-Binary"

@@ -18,6 +18,7 @@ target 'E-commrce-app' do
     # Pods for E-commrce-app
     pod 'IQDropDownTextField'
     pod 'BEMCheckBox'
+    pod 'YPImagePicker'
     
     
   end

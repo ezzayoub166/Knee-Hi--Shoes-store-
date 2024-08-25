@@ -26,242 +26,234 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Wh-EO-Hpb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Wh-EO-Hpb">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsL-0G-E5M">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8dK-yf-Cdn">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="657"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mml-OP-hxL">
-                                                <rect key="frame" x="0.0" y="337" width="393" height="37.666666666666686"/>
-                                                <color key="backgroundColor" red="0.1019607843" green="0.1450980392" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Set Images For shose.">
-                                                    <fontDescription key="titleFontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="18"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="un9-bd-Gm0">
-                                                <rect key="frame" x="0.0" y="394.66666666666674" width="393" height="309.33333333333337"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hck-ND-HTT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="77.333333333333329"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-ml-dyX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="22.333333333333332"/>
-                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V3N-4d-lQp">
-                                                                <rect key="frame" x="0.0" y="27.333333333333371" width="393" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="Rf7-lR-d9m"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-Ob-On4">
-                                                        <rect key="frame" x="0.0" y="77.333333333333371" width="393" height="77.333333333333314"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descreption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYD-uK-LII">
-                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="22.333333333333332"/>
-                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descreption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGt-Hf-HXp">
-                                                                <rect key="frame" x="0.0" y="27.333333333333371" width="393" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="n7r-rb-CiP"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7OT-XK-jh4">
-                                                        <rect key="frame" x="0.0" y="154.66666666666674" width="393" height="77.333333333333314"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-2e-UQ0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="22.333333333333332"/>
-                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="199" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvS-gl-ftA">
-                                                                <rect key="frame" x="0.0" y="27.333333333333258" width="393" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="le6-gl-zdE"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M8c-wf-mKQ">
-                                                        <rect key="frame" x="0.0" y="232.00000000000003" width="393" height="77.333333333333343"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shose_brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-DT-oJ1">
-                                                                <rect key="frame" x="0.0" y="0.0" width="393" height="22.333333333333332"/>
-                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhm-Ut-AO6">
-                                                                <rect key="frame" x="0.0" y="27.333333333333371" width="393" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="MuI-R6-H02"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fGV-Rc-8AB">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
+                                                <rect key="frame" x="20" y="0.0" width="353" height="200"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="O36-ha-43M"/>
+                                                    <constraint firstAttribute="height" constant="200" id="dum-KW-CFj"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S9S-ho-LgQ">
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S9S-ho-LgQ">
                                                     <size key="itemSize" width="392" height="205"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="uxV-94-JOk">
-                                                        <rect key="frame" x="0.66666666666666663" y="0.0" width="392" height="205"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="uxV-94-JOk" customClass="ImageCell" customModule="E_commrce_app_Admin" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-2.6666666666666665" width="392" height="205"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="E4B-Zo-YbD">
                                                             <rect key="frame" x="0.0" y="0.0" width="392" height="205"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choseOne" translatesAutoresizingMaskIntoConstraints="NO" id="gLt-Rl-EU6">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="choseOne" translatesAutoresizingMaskIntoConstraints="NO" id="gLt-Rl-EU6">
                                                                     <rect key="frame" x="0.0" y="0.0" width="392" height="205"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="gLt-Rl-EU6" firstAttribute="top" secondItem="E4B-Zo-YbD" secondAttribute="top" id="5d6-fc-Weu"/>
-                                                                <constraint firstAttribute="trailing" secondItem="gLt-Rl-EU6" secondAttribute="trailing" id="RTz-UZ-qRt"/>
-                                                                <constraint firstItem="gLt-Rl-EU6" firstAttribute="leading" secondItem="E4B-Zo-YbD" secondAttribute="leading" id="Sky-ky-TJ0"/>
-                                                                <constraint firstAttribute="bottom" secondItem="gLt-Rl-EU6" secondAttribute="bottom" id="kaO-ZO-Td4"/>
-                                                            </constraints>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="392" height="205"/>
+                                                        <connections>
+                                                            <outlet property="coverImage" destination="gLt-Rl-EU6" id="pgz-Bs-bAx"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q9u-Ko-mqn" customClass="TableViewAdjusetHeight" customModule="E_commrce_app_Admin" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="714" width="393" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mml-OP-hxL">
+                                                <rect key="frame" x="20" y="200" width="353" height="50"/>
+                                                <color key="backgroundColor" red="0.1019607843" green="0.1450980392" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="qlb-MG-KWk"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Set Images For shose.">
+                                                    <fontDescription key="titleFontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="setImagesForProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zLO-wf-NT6"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="un9-bd-Gm0">
+                                                <rect key="frame" x="20" y="250" width="353" height="230"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hck-ND-HTT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="353" height="46"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWg-ml-dyX">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="22.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V3N-4d-lQp">
+                                                                <rect key="frame" x="0.0" y="27.333333333333314" width="353" height="18.666666666666671"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-Ob-On4">
+                                                        <rect key="frame" x="0.0" y="46" width="353" height="46"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descreption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYD-uK-LII">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="22.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Descreption" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGt-Hf-HXp">
+                                                                <rect key="frame" x="0.0" y="27.333333333333314" width="353" height="18.666666666666671"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7OT-XK-jh4">
+                                                        <rect key="frame" x="0.0" y="92" width="353" height="46"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-2e-UQ0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="22.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="199" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tvS-gl-ftA">
+                                                                <rect key="frame" x="0.0" y="27.333333333333314" width="353" height="18.666666666666671"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="M8c-wf-mKQ">
+                                                        <rect key="frame" x="0.0" y="138" width="353" height="46"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shose_brand" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-DT-oJ1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="22.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhm-Ut-AO6" customClass="IQDropDownTextField">
+                                                                <rect key="frame" x="0.0" y="27.333333333333314" width="353" height="18.666666666666671"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="optionalItemText" value="Nike"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptionalDropDown" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CdN-Xj-A2m">
+                                                        <rect key="frame" x="0.0" y="184" width="353" height="46"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOL-4O-B5Q">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="22.333333333333332"/>
+                                                                <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SOc-VF-I5g" customClass="IQDropDownTextField">
+                                                                <rect key="frame" x="0.0" y="27.333333333333371" width="353" height="18.666666666666671"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="optionalItemText" value="Male"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isOptionalDropDown" value="YES"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q9u-Ko-mqn" customClass="TableViewAdjusetHeight" customModule="E_commrce_app_Admin" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="480" width="353" height="177"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckSizeCell" id="blN-zH-6OJ" customClass="CheckSizeCell" customModule="E_commrce_app_Admin" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="393" height="48"/>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="blN-zH-6OJ">
+                                                        <rect key="frame" x="0.0" y="50" width="353" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="blN-zH-6OJ" id="fO9-SO-IQZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-lv-QgA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-V0-Xbx">
+                                                                    <rect key="frame" x="0.0" y="10" width="348" height="30"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="US" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2T-8K-Db2">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="0.0"/>
-                                                                            <fontDescription key="fontDescription" name="AirbnbCerealWBlk" family="AirbnbCereal_W_Blk" pointSize="17"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnO-bw-vhl">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="19.333333333333332" height="30"/>
+                                                                            <fontDescription key="fontDescription" name="AirbnbCerealWMd" family="AirbnbCereal_W_Md" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-V0-Xbx">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
-                                                                            <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnO-bw-vhl">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="345" height="48"/>
-                                                                                    <fontDescription key="fontDescription" name="AirbnbCerealWMd" family="AirbnbCereal_W_Md" pointSize="17"/>
-                                                                                    <nil key="textColor"/>
-                                                                                    <nil key="highlightedColor"/>
-                                                                                </label>
-                                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VFo-Y6-TKy" customClass="BEMCheckBox" customModule="E_commrce_app_Admin" customModuleProvider="target">
-                                                                                    <rect key="frame" x="345" y="0.0" width="48" height="48"/>
-                                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="width" secondItem="VFo-Y6-TKy" secondAttribute="height" multiplier="1:1" id="4Y0-5L-xVW"/>
-                                                                                        <constraint firstAttribute="height" constant="50" id="ylw-Yd-k6i"/>
-                                                                                    </constraints>
-                                                                                </view>
-                                                                            </subviews>
-                                                                        </stackView>
+                                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFo-Y6-TKy" customClass="BEMCheckBox">
+                                                                            <rect key="frame" x="318" y="0.0" width="30" height="30"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" secondItem="VFo-Y6-TKy" secondAttribute="height" multiplier="1:1" id="O4q-dk-7NJ"/>
+                                                                                <constraint firstAttribute="height" constant="30" id="ald-Ko-M2Z"/>
+                                                                            </constraints>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="size" keyPath="minimumTouchSize">
+                                                                                    <size key="value" width="20" height="20"/>
+                                                                                </userDefinedRuntimeAttribute>
+                                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="YES"/>
+                                                                            </userDefinedRuntimeAttributes>
+                                                                        </view>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="trailing" secondItem="VFo-Y6-TKy" secondAttribute="trailing" constant="5" id="5lK-ib-5A1"/>
+                                                                    </constraints>
                                                                 </stackView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailing" secondItem="ftR-lv-QgA" secondAttribute="trailing" id="4KM-4J-MF2"/>
-                                                                <constraint firstItem="ftR-lv-QgA" firstAttribute="leading" secondItem="fO9-SO-IQZ" secondAttribute="leading" id="55A-8R-uoh"/>
-                                                                <constraint firstAttribute="bottom" secondItem="ftR-lv-QgA" secondAttribute="bottom" id="Uu4-jj-JEP"/>
-                                                                <constraint firstItem="ftR-lv-QgA" firstAttribute="top" secondItem="fO9-SO-IQZ" secondAttribute="top" id="fek-kb-Oho"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Tc2-V0-Xbx" secondAttribute="trailing" constant="5" id="N1v-uy-FQA"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Tc2-V0-Xbx" secondAttribute="bottom" constant="10" id="bpJ-k2-Qkt"/>
+                                                                <constraint firstItem="Tc2-V0-Xbx" firstAttribute="leading" secondItem="fO9-SO-IQZ" secondAttribute="leading" id="dzn-dI-ktt"/>
+                                                                <constraint firstItem="Tc2-V0-Xbx" firstAttribute="top" secondItem="fO9-SO-IQZ" secondAttribute="top" constant="10" id="fxr-c4-E4v"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
-                                                            <outlet property="CategorySize" destination="i2T-8K-Db2" id="DCJ-tW-vXq"/>
                                                             <outlet property="checkBox" destination="VFo-Y6-TKy" id="rRO-jY-dEn"/>
                                                             <outlet property="sizeValue" destination="pnO-bw-vhl" id="z5s-xO-mEP"/>
                                                         </connections>
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Trx-Vg-EAN">
-                                                <rect key="frame" x="0.0" y="812" width="393" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="rQA-C9-ytJ"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="un9-bd-Gm0" secondAttribute="trailing" id="0h3-9u-0b0"/>
-                                            <constraint firstItem="un9-bd-Gm0" firstAttribute="top" secondItem="Mml-OP-hxL" secondAttribute="bottom" constant="20" id="Fvb-WZ-3hJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="Q9u-Ko-mqn" secondAttribute="trailing" id="IrE-jm-XOw"/>
-                                            <constraint firstAttribute="bottom" secondItem="Q9u-Ko-mqn" secondAttribute="bottom" constant="10" id="K3y-9D-Zv8"/>
-                                            <constraint firstItem="fGV-Rc-8AB" firstAttribute="top" secondItem="zsL-0G-E5M" secondAttribute="top" id="LhA-4i-jww"/>
-                                            <constraint firstAttribute="bottom" secondItem="Trx-Vg-EAN" secondAttribute="bottom" id="RIK-6u-NUZ"/>
-                                            <constraint firstItem="Trx-Vg-EAN" firstAttribute="leading" secondItem="zsL-0G-E5M" secondAttribute="leading" id="S08-b2-x7w"/>
-                                            <constraint firstItem="Q9u-Ko-mqn" firstAttribute="top" secondItem="un9-bd-Gm0" secondAttribute="bottom" constant="10" id="WPe-sd-ETg"/>
-                                            <constraint firstItem="Mml-OP-hxL" firstAttribute="leading" secondItem="zsL-0G-E5M" secondAttribute="leading" id="Xrd-e3-GQz"/>
-                                            <constraint firstItem="Q9u-Ko-mqn" firstAttribute="leading" secondItem="zsL-0G-E5M" secondAttribute="leading" id="dRw-FU-vYv"/>
-                                            <constraint firstItem="fGV-Rc-8AB" firstAttribute="leading" secondItem="zsL-0G-E5M" secondAttribute="leading" id="jou-yr-ZcT"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mml-OP-hxL" secondAttribute="trailing" id="oXD-sY-I5q"/>
-                                            <constraint firstAttribute="trailing" secondItem="Trx-Vg-EAN" secondAttribute="trailing" id="oaD-Xw-cHW"/>
-                                            <constraint firstItem="un9-bd-Gm0" firstAttribute="leading" secondItem="zsL-0G-E5M" secondAttribute="leading" id="wbh-ov-4p5"/>
-                                            <constraint firstAttribute="trailing" secondItem="fGV-Rc-8AB" secondAttribute="trailing" id="zMi-pH-Xcq"/>
-                                        </constraints>
-                                    </view>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="20" bottom="0.0" trailing="20"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="zsL-0G-E5M" secondAttribute="bottom" id="07s-03-ttn"/>
-                                    <constraint firstAttribute="trailing" secondItem="zsL-0G-E5M" secondAttribute="trailing" id="Bku-Zc-N09"/>
-                                    <constraint firstItem="zsL-0G-E5M" firstAttribute="leading" secondItem="0Wh-EO-Hpb" secondAttribute="leading" id="XGA-66-OlT"/>
-                                    <constraint firstItem="zsL-0G-E5M" firstAttribute="top" secondItem="0Wh-EO-Hpb" secondAttribute="top" id="zSG-hy-sKj"/>
+                                    <constraint firstItem="8dK-yf-Cdn" firstAttribute="width" secondItem="0Wh-EO-Hpb" secondAttribute="width" id="7cJ-0J-QuU"/>
+                                    <constraint firstItem="8dK-yf-Cdn" firstAttribute="centerX" secondItem="0Wh-EO-Hpb" secondAttribute="centerX" id="Eeq-If-4UI"/>
+                                    <constraint firstAttribute="trailing" secondItem="8dK-yf-Cdn" secondAttribute="trailing" id="l11-lB-pYf"/>
+                                    <constraint firstAttribute="bottom" secondItem="8dK-yf-Cdn" secondAttribute="bottom" id="mhx-bc-SEt"/>
+                                    <constraint firstItem="8dK-yf-Cdn" firstAttribute="leading" secondItem="0Wh-EO-Hpb" secondAttribute="leading" id="xfA-Lw-orT"/>
+                                    <constraint firstItem="8dK-yf-Cdn" firstAttribute="top" secondItem="0Wh-EO-Hpb" secondAttribute="top" id="zvX-pZ-rBX"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Wh-EO-Hpb" secondAttribute="bottom" id="TV7-l6-6Zf"/>
-                            <constraint firstItem="zsL-0G-E5M" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="aO6-3r-VcG"/>
-                            <constraint firstItem="zsL-0G-E5M" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="o4r-je-qCl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Wh-EO-Hpb" secondAttribute="trailing" id="shW-Ea-i4O"/>
-                            <constraint firstItem="0Wh-EO-Hpb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="skW-Ms-laj"/>
-                            <constraint firstItem="0Wh-EO-Hpb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wxw-1E-B6B"/>
+                            <constraint firstItem="0Wh-EO-Hpb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="B6V-e0-B8L"/>
+                            <constraint firstItem="0Wh-EO-Hpb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cy1-58-sQh"/>
+                            <constraint firstItem="0Wh-EO-Hpb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aqw-wH-hHG"/>
+                            <constraint firstItem="0Wh-EO-Hpb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qbm-2c-oet"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="brandsDropDown" destination="Mhm-Ut-AO6" id="dAh-pL-nyj"/>
+                        <outlet property="collectionView" destination="fGV-Rc-8AB" id="6dH-rL-FRf"/>
+                        <outlet property="genderDropDown" destination="SOc-VF-I5g" id="S5k-BZ-UgH"/>
                         <outlet property="sizesTableView" destination="Q9u-Ko-mqn" id="drY-sL-Nde"/>
                     </connections>
                 </viewController>

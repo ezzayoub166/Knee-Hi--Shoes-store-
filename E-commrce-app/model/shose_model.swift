@@ -17,8 +17,9 @@ class Shose_model {
     var colors : [RadioModle]
     var isWishList : Bool = false
     var shose_brand : Shose_brands
+    var gender : Gender
     
-    init(title: String, price: String, Description: String? = nil, isPopular: Bool, isNewArrival: Bool, isWishList: Bool, colors : [RadioModle] , shose_brand : Shose_brands) {
+    init(title: String, price: String, Description: String? = nil, isPopular: Bool, isNewArrival: Bool, isWishList: Bool, colors : [RadioModle] , shose_brand : Shose_brands,gender : Gender) {
         self.title = title
         self.price = price
         self.Description = Description
@@ -27,6 +28,7 @@ class Shose_model {
         self.isWishList = isWishList
         self.colors = colors
         self.shose_brand = shose_brand
+        self.gender = gender
     }
     
     // Convert to dictionary for Firestore
@@ -41,6 +43,7 @@ class Shose_model {
         dict["isNewArrival"] = isNewArrival
         dict["isWishList"] = isWishList
         dict["shoseBrand"] = shose_brand.rawValue
+        dict["Gender"] = gender.rawValue
         dict["colors"] = colors.map { $0.toDictionary() }
         
         return dict
@@ -112,6 +115,6 @@ class Test{
             
             
             
-        ], shose_brand: .ADDIDS)
+        ], shose_brand: .ADDIDS, gender: Gender.Female)
     
 }
