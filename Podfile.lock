@@ -1,6 +1,7 @@
 PODS:
   - BEMCheckBox (1.4.1)
   - IQDropDownTextField (4.0.4)
+  - ProgressHUD (14.1.1)
   - PryntTrimmerView (4.0.2)
   - SteviaLayout (5.1.2)
   - YPImagePicker (5.2.2):
@@ -10,12 +11,14 @@ PODS:
 DEPENDENCIES:
   - BEMCheckBox
   - IQDropDownTextField
+  - ProgressHUD
   - YPImagePicker
 
 SPEC REPOS:
   trunk:
     - BEMCheckBox
     - IQDropDownTextField
+    - ProgressHUD
     - PryntTrimmerView
     - SteviaLayout
     - YPImagePicker
@@ -23,10 +26,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   IQDropDownTextField: 3cce52d039b32c6cfa44c6a7603e949c1df4c7c3
+  ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SteviaLayout: 05424e528d643657d39ce72c786e4adf13cfc5f2
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: 9ac2b7857c9c9cf1fce93af5268c69de717aecaa
+PODFILE CHECKSUM: 05a2739b14e5e0b393d4f9c130d3380b43887714
 
 COCOAPODS: 1.15.2

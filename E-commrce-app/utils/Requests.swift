@@ -76,4 +76,27 @@ extension Requests {
         }
     }
     
+    static func getProducts(completion: @escaping (Result<[Shose_model], Error>) -> Void , attribute : String){
+        Constants.dbPath.collection("shoses").whereField(attribute, isEqualTo:true).limit(to: 4).getDocuments { snapshot, error in
+            if error != nil {
+                print("Error getting documents: \(String(describing: error?.localizedDescription))")
+                completion(.failure(error!))
+                return
+            }
+            guard let documents = snapshot?.documents else {
+                completion(.success([]))
+                return
+            }
+            
+            let shoses : [Shose_model] = documents.compactMap { doc in
+                return Shose_model.init(from: doc)
+            }
+            
+            completion(.success(shoses))
+            
+            
+            
+        }
+    }
+    
 }

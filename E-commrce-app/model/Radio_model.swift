@@ -6,11 +6,24 @@
 //
 
 import Foundation
-struct RadioModle  {
+class RadioModle   {
+    static func == (lhs: RadioModle, rhs: RadioModle) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     var id : Int
     var name : String
     var codeColor : String?
     var avaible_sizes_categories : [AvalibleSizeType]
+    
+    
+    init(id : Int , name : String , codeColor : String , avaible_sizes_categories: [AvalibleSizeType]) {
+
+        self.id = id
+        self.name = name
+        self.codeColor = codeColor
+        self.avaible_sizes_categories = avaible_sizes_categories
+    }
     
     // Convert to dictionary for Firestore
      func toDictionary() -> [String: Any] {
@@ -23,4 +36,18 @@ struct RadioModle  {
          
          return dict
      }
+    
+    // Initializer from a dictionary (Optional)
+        init?(from dictionary: [String: Any]) {
+            guard let id = dictionary["id"] as? Int,
+                  let name = dictionary["name"] as? String,
+                  let availableSizesCategoriesArray = dictionary["available_sizes_categories"] as? [[String: Any]] else {
+                return nil
+            }
+
+            self.id = id
+            self.name = name
+            self.codeColor = dictionary["codeColor"] as? String
+            self.avaible_sizes_categories = availableSizesCategoriesArray.compactMap { AvalibleSizeType(from: $0) }
+        }
 }

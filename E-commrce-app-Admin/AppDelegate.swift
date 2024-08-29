@@ -12,6 +12,14 @@ import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+//    static let shared = UIApplication.shared.delegate as? AppDelegate
+//    
+//    var rootNaviagtionController : MainNavViewController?
+//
+//    
+//    
+//    static let main_sb = UIStoryboard(name: "Main_Admin", bundle: nil)
 
 
 

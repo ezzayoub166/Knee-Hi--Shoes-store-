@@ -18,20 +18,6 @@ struct Constants {
     
     static let categories_arr = [
         
-        
-        /*
-         Puma
-         UNDER ARMOUR
-         adidas
-         converse
-         
-         icUnderAmrong
-         icPuma
-         icNike
-         icConvers
-         icAddids
-         
-         */
         Category_Item(id: 0, image_url: "icNike", title: "Nike", count: 0),
         Category_Item(id: 1, image_url: "icPuma", title: "Puma", count: 0),
         Category_Item(id: 2, image_url: "icUnderAmrong", title: "Under Armour", count: 0),

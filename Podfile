@@ -19,6 +19,8 @@ target 'E-commrce-app' do
     pod 'IQDropDownTextField'
     pod 'BEMCheckBox'
     pod 'YPImagePicker'
+    pod 'ProgressHUD'
+#    pod 'Kingfisher', '~> 7.0'
     
     
   end

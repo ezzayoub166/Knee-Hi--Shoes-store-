@@ -27,6 +27,10 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var category_indictor: UIActivityIndicatorView!
     
+    
+    @IBOutlet weak var popular_indictor: UIActivityIndicatorView!
+    
+    
     var selectedIndexPath: IndexPath? = IndexPath(row: 0, section: 0){
         didSet{
             DispatchQueue.main.async {
@@ -46,12 +50,53 @@ class HomeVC: UIViewController {
     
     var category_array : [Category_Item] = []
     
+    var popular_shoses : [Shose_model] = []
+    var new_arrival_shoses : [Shose_model] = []
+    
+    
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         isHiddenNavigation = true
         setupView()
         setupData()
         fetchData()
+        
+        Constants.dbPath.collection("shoses").whereField("isPopular", isEqualTo:true).limit(to: 4).getDocuments { snapshot, error in
+            if error != nil {
+                print("Error getting documents: \(String(describing: error?.localizedDescription))")
+
+                return
+            }
+            guard let documents = snapshot?.documents else {
+                return
+            }
+            
+            let shoses : [Shose_model] = documents.compactMap { doc in
+                return Shose_model.init(from: doc)
+            }
+            
+            print(shoses)
+            
+            
+        }
+       
+        // Usage
+//        Requests.getProducts { result in
+//                switch result {
+//                case .success(let shosesIsPopular):
+//                    print(shosesIsPopular)
+//                    // Perform additional background tasks if needed
+//                    
+//                    // If you need to update the UI:
+//                    DispatchQueue.main.async {
+//                        // Update UI here
+//                    }
+//                case .failure(let error):
+//                    print("Failed to fetch products: \(error)")
+//                }
+//        }
+
 //        Task{
 //            await ConstantsFunctions.uploadCategoryData()
 //        }
@@ -105,6 +150,7 @@ extension HomeVC {
     }
     func fetchData(){
         getCategories()
+        fetchPopularProducts()
         
     }
     
@@ -139,12 +185,35 @@ extension HomeVC {
         }
         
     }
+    
+    private func fetchPopularProducts(){
+        self.popular_shoses.removeAll()
+        self.popular_indictor.startAnimating()
+        Requests.getProducts(completion: { result in
+            switch result {
+            case .success(let shoses):
+                self.popular_shoses = shoses
+                print(shoses[0].images[0])
+                DispatchQueue.main.async {
+                    self.popularShoesCollectionView.reloadData()
+                    self.popular_indictor.stopAnimating()
+                    self.popular_indictor.hidesWhenStopped = true
+                }
+            case .failure(let failure):
+                print(failure.localizedDescription)
+        
+            }
+        }, attribute: "isPopular")
+        
+    }
 }
 extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoriesCollectionView {
             return category_array.count
-        }else {
+        }else if collectionView == popularShoesCollectionView  {
+            return popular_shoses.count
+        } else {
             return 5
         }
     }
@@ -170,6 +239,7 @@ extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
         
         else if collectionView == popularShoesCollectionView{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: productItemCollectionViewCell.identifier, for: indexPath) as!productItemCollectionViewCell
+            cell.configure(model: popular_shoses[indexPath.row])
             return cell
         }
         

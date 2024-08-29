@@ -6,9 +6,30 @@
 //
 
 import Foundation
-struct AvalibleSizeType {
+class AvalibleSizeType  {
+    
     var name : TypeSizeEnum
     var values : [Size_Item_model]
+    
+    init(name : TypeSizeEnum , values : [Size_Item_model]){
+        self.name = name
+        self.values = values
+    }
+    
+    
+    
+    
+    // Initializer from a dictionary (Optional)
+      init?(from dictionary: [String: Any]) {
+          guard let nameRawValue = dictionary["name"] as? String,
+                let name = TypeSizeEnum(rawValue: nameRawValue),
+                let valuesArray = dictionary["values"] as? [[String: Any]] else {
+              return nil
+          }
+
+          self.name = name
+          self.values = valuesArray.compactMap { Size_Item_model(from: $0) }
+      }
     
     // Convert to dictionary for Firestore
      func toDictionary() -> [String: Any] {

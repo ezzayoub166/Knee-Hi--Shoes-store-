@@ -71,11 +71,11 @@ class MyTools: NSObject {
         return image
     }
     
-    static func GetDateAgo(dt_date : Int) -> String {
-        let _date = Date(milliseconds: dt_date)
-        let retdate = DateFormatter().timeSince(from: _date, numericDates: true)
-        return retdate
-    }
+//    static func GetDateAgo(dt_date : Int) -> String {
+//        let _date = Date(milliseconds: dt_date)
+//        let retdate = DateFormatter().timeSince(from: _date, numericDates: true)
+//        return retdate
+//    }
 
     static func AlertSheet(vc: UIViewController,title : String = "",options: [String],showCancel: Bool = true, completion: @escaping(Int,String,Bool)->Void) {
         

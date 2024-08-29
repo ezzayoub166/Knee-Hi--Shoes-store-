@@ -10,6 +10,9 @@ import UIKit
 extension UIStoryboard {
     static let mainStoryBoard = UIStoryboard.init(name: "Main", bundle: nil)
     
+    static let mainAdminStoryBoard = UIStoryboard.init(name: "Main_Admin", bundle: nil)
+
+    
 
         func instance_vc<T: UIViewController>() -> T {
             guard let vc = instantiateViewController(withIdentifier: String(describing: T.self)) as? T else {

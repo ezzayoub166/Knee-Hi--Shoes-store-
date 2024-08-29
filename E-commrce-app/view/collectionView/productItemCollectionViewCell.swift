@@ -9,11 +9,19 @@ import UIKit
 
 class productItemCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var img_shose: UIImageView!
+    
+    @IBOutlet weak var title_shose: UILabel!
+    
+    @IBOutlet weak var price_shose: UILabel!
+    
     @IBOutlet weak var addBtn: UIButton!{
         didSet{
             self.addBtn.roundCorners(corners: [.topLeft,.bottomRight], radius: 10)
         }
     }
+    
+    
     
     static let identifier = "productItemCollectionViewCell"
 
@@ -23,5 +31,14 @@ class productItemCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func addBtn(_ sender: Any) {
+    }
+    
+    func configure(model : Shose_model){
+//        if let obj = model {
+        self.img_shose.sd_setImage(with: URL(string: model.images[0]))
+        self.title_shose.text = model.title
+        self.price_shose.text = model.price! + " $"
+//        }
+        
     }
 }

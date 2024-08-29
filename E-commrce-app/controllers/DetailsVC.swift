@@ -9,12 +9,15 @@ import UIKit
 
 class DetailsVC: UIViewController {
     var obj = Shose_model(
-        title: "Nike",
+
+        title: "Nike", shoseId: "1",
         price: "199$",
-        Description: "Test Test Test Test Test Test Test Test Test Test Test Test Test Test",
+        description: "Test Test Test Test Test Test Test Test Test Test Test Test Test Test",
         isPopular: false,
         isNewArrival: true,
         isWishList: false,
+        shose_brand: "ADDIDS",
+        gender: Gender.Female,
         colors: [
             RadioModle(
                 id: 1,
@@ -58,7 +61,7 @@ class DetailsVC: UIViewController {
                                     )
                     
                 ]),
-        ], shose_brand: .ADDIDS
+        ],  images:[]
     )
     
     

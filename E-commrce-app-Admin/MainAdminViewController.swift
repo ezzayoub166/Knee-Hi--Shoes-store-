@@ -9,6 +9,10 @@ import UIKit
 import BEMCheckBox
 import IQDropDownTextField
 import YPImagePicker
+import ProgressHUD
+import FirebaseFirestore
+import FirebaseStorage
+import FirebaseDatabaseInternal
 
 struct SizeItem : Hashable {
     let color: String
@@ -23,154 +27,40 @@ class MainAdminViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var titletxt: UITextField!
     
-    var compents : [RadioModle] = [
-        RadioModle(id: 0,
-                   name: "Green",
-                   codeColor: "#008000",
-                   avaible_sizes_categories: [
-                    AvalibleSizeType(
-                        name: TypeSizeEnum.EU,
-                        values: [
-                            Size_Item_model(id: "0", values: 44),
-                            Size_Item_model(id: "1", values: 46),
-                            Size_Item_model(id: "2", values: 48),
-                            Size_Item_model(id: "3", values: 50),
-                            Size_Item_model(id: "4", values: 52),
-                            Size_Item_model(id: "5", values: 54),
-                            Size_Item_model(id: "6", values: 56),
-                            Size_Item_model(id: "7", values: 58),
-                            Size_Item_model(id: "8", values: 60),
-                            Size_Item_model(id: "9", values: 62),
-                        ]
-                    ),
-                    AvalibleSizeType(
-                        name: TypeSizeEnum.US,
-                        values: [
-                            Size_Item_model(id: "10", values: 34),
-                            Size_Item_model(id: "11", values: 36),
-                            Size_Item_model(id: "12", values: 38),
-                            Size_Item_model(id: "13", values: 40),
-                            Size_Item_model(id: "14", values: 42),
-                            Size_Item_model(id: "15", values: 44),
-                            Size_Item_model(id: "16", values: 46),
-                            Size_Item_model(id: "17", values: 48),
-                            Size_Item_model(id: "18", values: 50),
-                            Size_Item_model(id: "19", values: 52),
-                        ]
-                    ),
-                    AvalibleSizeType(
-                        name: TypeSizeEnum.UK,
-                        values: [
-                            Size_Item_model(id: "20", values: 34),
-                            Size_Item_model(id: "21", values: 36),
-                            Size_Item_model(id: "22", values: 38),
-                            Size_Item_model(id: "23", values: 40),
-                            Size_Item_model(id: "24", values: 42),
-                            Size_Item_model(id: "25", values: 44),
-                            Size_Item_model(id: "26", values: 46),
-                            Size_Item_model(id: "27", values: 48),
-                            Size_Item_model(id: "28", values: 50),
-                            Size_Item_model(id: "29", values: 52),
-                        ]
-                    ),
-                   ]
-                  ),
-        RadioModle(id: 2,
-                   name: "Red",
-                   codeColor: "#FF0000",
-                   avaible_sizes_categories: [
-                    AvalibleSizeType(
-                        name: TypeSizeEnum.EU,
-                        values: [
-                            Size_Item_model(id: "0", values: 44),
-                            Size_Item_model(id: "1", values: 46),
-                            Size_Item_model(id: "2", values: 48),
-                            Size_Item_model(id: "3", values: 50),
-                            Size_Item_model(id: "4", values: 52),
-                            Size_Item_model(id: "5", values: 54),
-                            Size_Item_model(id: "6", values: 56),
-                            Size_Item_model(id: "7", values: 58),
-                            Size_Item_model(id: "8", values: 60),
-                            Size_Item_model(id: "9", values: 62),
-                        ]
-                    ),
-                    AvalibleSizeType(
-                        name: TypeSizeEnum.US,
-                        values: [
-                            Size_Item_model(id: "10", values: 34),
-                            Size_Item_model(id: "11", values: 36),
-                            Size_Item_model(id: "12", values: 38),
-                            Size_Item_model(id: "13", values: 40),
-                            Size_Item_model(id: "14", values: 42),
-                            Size_Item_model(id: "15", values: 44),
-                            Size_Item_model(id: "16", values: 46),
-                            Size_Item_model(id: "17", values: 48),
-                            Size_Item_model(id: "18", values: 50),
-                            Size_Item_model(id: "19", values: 52),
-                        ]
-                    ),
-                    AvalibleSizeType(
-                        name: TypeSizeEnum.UK,
-                        values: [
-                            Size_Item_model(id: "20", values: 34),
-                            Size_Item_model(id: "21", values: 36),
-                            Size_Item_model(id: "22", values: 38),
-                            Size_Item_model(id: "23", values: 40),
-                            Size_Item_model(id: "24", values: 42),
-                            Size_Item_model(id: "25", values: 44),
-                            Size_Item_model(id: "26", values: 46),
-                            Size_Item_model(id: "27", values: 48),
-                            Size_Item_model(id: "28", values: 50),
-                            Size_Item_model(id: "29", values: 52),
-                        ]
-                    ),
-                   ]
-                  )
-    ]
+    @IBOutlet weak var descreptiontxt: UITextField!
     
-    
-    
-    
-    var arrayOfSizes: [String: [String: Any]] = [
-        "Red": [
-            "code": "12345",
-            "EU": [44, 46, 48, 50, 52, 54, 56, 58, 60, 62],
-            "US": [34, 36, 38, 40, 42, 44, 46, 48, 50, 52],
-            "UK": [34, 36, 38, 40, 42, 44, 46, 48, 50, 52]
-        ],
-        "Green": [
-            "code": "23223",
-            "EU": [44, 46, 48, 50, 52, 54, 56, 58, 60, 62],
-            "US": [34, 36, 38, 40, 42, 44, 46, 48, 50, 52],
-            "UK": [34, 36, 38, 40, 42, 44, 46, 48, 50, 52]
-        ]
-    ]
-    
-    var expandedSections: Set<String> = []
-    //Use a dictionary to store the checked state for each cell based on its index path.
-    var checkedStates: [IndexPath: Bool] = [:]
-    
-    
-    
-    
-    lazy var sectionTitles: [String] = {
-        return Array(arrayOfSizes.keys)
-    }()
-    
-    
+    @IBOutlet weak var pricetxt: UITextField!
     
     @IBOutlet weak var genderDropDown: IQDropDownTextField!
     
     @IBOutlet weak var brandsDropDown: IQDropDownTextField!
     
-    var arrayoOfImages : [UIImage?] = []
+    @IBOutlet weak var isPopularCheck: BEMCheckBox!
     
-    var flattenedSizes: [SizeItem] = []
-    
-    
+    @IBOutlet weak var isNewArrivalCheck: BEMCheckBox!
     
     
+    
+    var arrayoOfImages : [UIImage] = []
+    var arrayOfUrls : [String] = []
+    
+    
+    var compents = ConstantsAdmin.compents
+    
+    var expandedSections: Set<String> = []
+    
+    var selectedSections: Set<String> = []
+    
+    
+    var checkedStates: [IndexPath: Bool] = [:]
+    
+    var selectedGender : String = ""
+    
+    var selectedBrandModel : String = ""
+    
+    let _db = Firestore.firestore()
     
     
     //MARK: - viewDidLoad
@@ -179,14 +69,185 @@ class MainAdminViewController: UIViewController {
         setupview()
         setupdata()
         fetchData()
-        flattenSizesData()
-        //        var arrayOfSizes = arrayOfSizes.filter { $0.key != "code" }
+     
+        
         
         
     }
     
+    @IBAction func saveProductTp(_ sender: Any) {
+//        
+//        SKActivityIndicator.show()
+//        uploadImages(images: arrayoOfImages)
+//        SKActivityIndicator.show()
+
+        
+        let selectedSizes = compents.map{ item in
+            (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.values})})
+        }
+        
+        var radio_models : [RadioModle] = []
+        
+        for selectedSize in selectedSizes {
+            if(self.expandedSections.contains(selectedSize.0.name)){
+                // Map over avaible_sizes_categories to filter the checked sizes
+                let filteredCategories = selectedSize.0.avaible_sizes_categories.map { sizeCategory in
+                    // Filter the sizes within the category
+                    let filteredSizes = sizeCategory.values.filter { $0.isChecked ?? false }
+                    // Return a new AvalibleSizeType with the filtered sizes
+                    return AvalibleSizeType(name: sizeCategory.name, values: filteredSizes)
+                }
+                
+                // Create a new RadioModle with the filtered categories
+                var obj = RadioModle(
+                    id: selectedSize.0.id,
+                    name: selectedSize.0.name,
+                    codeColor: selectedSize.0.codeColor,
+                    avaible_sizes_categories: filteredCategories
+                )
+                
+                // Use `obj` as needed
+                // print(selectedSize)
+                print("\n")
+                print(obj)
+                radio_models.append(obj)
+            }
+        }
+        
+        guard let title = titletxt.text , !title.isEmpty else {
+            //            self.showToast("Title is required")
+            ProgressHUD.failed("Title is required")
+            return
+            
+        }
+        
+        guard let descreption = descreptiontxt.text , !descreption.isEmpty else {
+            //            self.showToast("descreption is required")
+            ProgressHUD.failed("descreption is required")
+            
+            return
+            
+        }
+        
+        guard let price = pricetxt.text , !price.isEmpty else {
+            ProgressHUD.failed("price is required")
+            return
+            
+        }
+        
+        guard !selectedGender.isEmpty else {
+            //            self.showToast("gender is required")
+            ProgressHUD.failed("Gender is required")
+            
+            return
+        }
+        guard !selectedBrandModel.isEmpty else {
+            //            self.showToast("gender is required")
+            ProgressHUD.failed("Brand is required")
+            
+            return
+        }
+        
+        guard !arrayOfUrls.isEmpty else{
+            ProgressHUD.failed("Images is required")
+            return
+        }
+        
+        
+        let object = Shose_model(title: price, price: price, description: descreption, isPopular: isPopularCheck.on, isNewArrival: isNewArrivalCheck.on, isWishList: false, shose_brand: selectedBrandModel, gender: Gender(rawValue: selectedGender) ?? Gender.none, colors: radio_models, images: arrayOfUrls)
+        SKActivityIndicator.show()
+        _db.collection("shoses").addDocument(data: object.toDictionary()) { error in
+            if error != nil{
+                SKActivityIndicator.dismiss()
+                self.showErrorMessage(message: error?.localizedDescription)
+
+            }else{
+                SKActivityIndicator.dismiss()
+                self.showAlert(title: "SUCCESS", message: "ADDED PRODUCT") {
+                    self.titletxt.text = ""
+                    self.descreptiontxt.text = ""
+                    self.pricetxt.text = ""
+                    self.arrayoOfImages.removeAll()
+                    self.expandedSections.removeAll()
+                    self.collectionView.reloadData()
+                    self.sizesTableView.reloadData()
+                    self.dismiss(animated: true)
+                }
+            }
+        }
+        
+        
+        
+        
+        
+    }
+    
+    func showAlert(title : String? , message : String?,buttonTitle1 : String = "OK", buttonAction1:@escaping(() -> Void)){
+            let alert = UIAlertController(title:title, message: message, preferredStyle: .alert)
+        let okayAction = UIAlertAction(title: buttonTitle1, style: .default,handler: {action in
+            buttonAction1()
+        })
+            alert.addAction(okayAction)
+            self.present(alert, animated: true)
+    }
+    
+    func showErrorMessage(message : String?){
+        let alert = UIAlertController(title:"Warrining", message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Ok", style: .destructive) { action in
+            
+        }
+        
+        alert.addAction(cancelAction)
+       self.present(alert, animated: true)
+    }
+    
+    
     
     @IBAction func setImagesForProduct(_ sender: Any) {
+        let selectedSizes = compents.map{ item in
+            (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.values})})
+        }
+        
+        for selectedSize in selectedSizes {
+            if(self.expandedSections.contains(selectedSize.0.name)){
+                // Map over avaible_sizes_categories to filter the checked sizes
+                let filteredCategories = selectedSize.0.avaible_sizes_categories.map { sizeCategory in
+                    // Filter the sizes within the category
+                    let filteredSizes = sizeCategory.values.filter { $0.isChecked ?? false }
+                    // Return a new AvalibleSizeType with the filtered sizes
+                    return AvalibleSizeType(name: sizeCategory.name, values: filteredSizes)
+                }
+                
+                // Create a new RadioModle with the filtered categories
+                var obj = RadioModle(
+                    id: selectedSize.0.id,
+                    name: selectedSize.0.name,
+                    codeColor: selectedSize.0.codeColor,
+                    avaible_sizes_categories: filteredCategories
+                )
+                
+                // Use `obj` as needed
+                // print(selectedSize)
+                print("\n")
+                print(obj)
+            }
+        }
+        
+        
+        
+        //        print(selectedSizes)
+        
+        //        let selectedSizes = compents.flatMap { component in
+        //            component.avaible_sizes_categories.flatMap { sizeCategory in
+        //                sizeCategory.values.filter { $0.isChecked! }
+        //            }
+        //
+        //        }
+        
+        // `selectedSizes` will now contain all selected sizes across all categories
+        //        print("Selected Sizes: \(selectedSizes.map{$0.values})")
+        
+        
         arrayoOfImages.removeAll()
         var config = YPImagePickerConfiguration()
         
@@ -227,20 +288,23 @@ class MainAdminViewController: UIViewController {
                 switch item {
                 case .photo(let photo):
                     self.arrayoOfImages.append(photo.image)
+                    
                     self.collectionView.reloadData()
                 case .video(let video):
                     print(video)
                 }
             }
+            self.uploadImages(images: self.arrayoOfImages)
             picker.dismiss(animated: true, completion: nil)
         }
+        
         
         present(picker, animated: true, completion: nil)
         
     }
 }
 
-//MARK: - extension for main Functions ..........
+//MARK: - extension [FOR] main Functions ..........
 
 extension MainAdminViewController {
     private func setupview(){
@@ -269,9 +333,8 @@ extension MainAdminViewController {
     private func setupTABLEVIEW(){
         sizesTableView.dataSource = self
         sizesTableView.delegate = self
-        sizesTableView.register(CheckSizeCell.self, forCellReuseIdentifier: CheckSizeCell.identifier)
+        //        sizesTableView.register(CheckSizeCell.self, forCellReuseIdentifier: CheckSizeCell.identifier)
         sizesTableView.register(SizeCellCheck.self, forCellReuseIdentifier: SizeCellCheck.identifier)
-        saveToDatabase()
         
         
         
@@ -282,10 +345,8 @@ extension MainAdminViewController {
         genderDropDown.dataSource = self
         brandsDropDown.delegate = self
         brandsDropDown.dataSource = self
-        //        genderDropDown.isOptionalDropDown = true
         genderDropDown.itemList = Gender.allCases.map { $0.rawValue }
-        //        brandsDropDown.isOptionalDropDown = true
-        brandsDropDown.itemList = Shose_brands.allCases.map{$0.rawValue}
+        brandsDropDown.itemList = ConstantsAdmin.categories_arr.map{$0.title!}
         
     }
     
@@ -296,42 +357,115 @@ extension MainAdminViewController {
         collectionView.showsHorizontalScrollIndicator = false
     }
     
-    // Flatten the nested size data into a single array of SizeItem
-    func flattenSizesData() {
-        for (color, sizesDict) in arrayOfSizes {
-            for (type, sizes) in sizesDict where type != "code" {
-                if let sizeArray = sizes as? [Int] {
-                    for size in sizeArray {
-                        flattenedSizes.append(SizeItem(color: color, type: type, size: size))
-                    }
+    func uploadImages(images: [UIImage]) {
+        for (index, image) in images.enumerated() {
+            guard let data = image.jpegData(compressionQuality: 0.6) else {
+                print("Failed to compress image at index \(index)")
+                continue
+            }
+            
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpg"
+            let i = Database.database().reference().childByAutoId()
+            
+            let refStorage = Storage.storage().reference().child("images").child(i.key ?? "")
+            
+            let uploadTask = refStorage.putData(data, metadata: metadata)
+            
+            uploadTask.observe(.progress) { snapshot in
+                let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+                print("Upload progress for image \(index + 1): \(percentComplete)%")
+                ProgressHUD.progress(percentComplete/100.0)
+            }
+            
+            uploadTask.observe(.failure) { snapshot in
+                ProgressHUD.failed("Failed to upload image , try again")
+            }
+            
+            uploadTask.observe(.success) { snapshot in
+                ProgressHUD.dismiss()
+            }
+            
+            refStorage.putData(data, metadata: metadata) { (result, error) in
+                if let error = error {
+                    print("Upload error for image \(index + 1): \(error.localizedDescription)")
+                    return
                 }
+                
+                    refStorage.downloadURL { result in
+                        switch result {
+                        case .success(let url):
+                            print("Image uploaded successfully: \(url.absoluteString)")
+                            self.arrayOfUrls.append(url.absoluteString)
+                            print(self.arrayOfUrls)
+                            
+                        case .failure(let error):
+                            print("Download URL error for image \(error.localizedDescription)")
+                        }
+                    }
             }
         }
     }
+
     
-    // Prepare the selected sizes for saving
-    func prepareSelectedSizesForSaving() -> [String: Any] {
-        var selectedSizes: [String: Any] = [:]
+    func ubloadImage(image:UIImage){
         
-        for (indexPath, isChecked) in checkedStates where isChecked {
-            let sizeItem = flattenedSizes[indexPath.row]
-            var colorDict = selectedSizes[sizeItem.color] as? [String: [Int]] ?? [:]
-            var sizeArray = colorDict[sizeItem.type] ?? []
-            sizeArray.append(sizeItem.size)
-            colorDict[sizeItem.type] = sizeArray
-            selectedSizes[sizeItem.color] = colorDict
+        let data = image.jpegData(compressionQuality:0.6)
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        let i = Database.database().reference().childByAutoId()
+        
+        
+        let refStorage = Storage.storage().reference().child("images").child(i.key ?? "")
+        
+        let uploadTask = refStorage.putData(data!, metadata: metadata)
+        
+        uploadTask.observe(.progress) { snapshot in
+            
+            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+            / Double(snapshot.progress!.totalUnitCount)
+ 
+            print(percentComplete)
+            ProgressHUD.progress(percentComplete/100.0)
+            
         }
         
-        return selectedSizes
+
+        uploadTask.observe(.failure) { snapshot in
+            
+            ProgressHUD.failed("Failed to upload image try again")
+
+        }
+        
+        uploadTask.observe(.success) { snapshot in
+            ProgressHUD.dismiss()
+        }
+        
+
+        refStorage.putData(data!, metadata: metadata) { (result, error) in
+            
+            
+            if error != nil {
+                print("upload\(error?.localizedDescription ?? "")")
+                return
+            }
+            
+            refStorage.downloadURL { result in
+                switch result {
+                case .success(let url):
+                    print("Image uploaded successfully: \(url.absoluteString)")
+//                    self.value["image\(index)"] = url.absoluteString
+//                    if index == images.count - 1 {
+//                        self.btn_UploadImage.setTitle("All images have been uploaded.".localized, for: .normal)
+//                    }
+                    
+                case .failure(let error):
+                    print("Download URL error for image \(error.localizedDescription)")
+                }
+            }
+            
+        }
     }
-    
-    // Function to save the data to the database
-    func saveToDatabase() {
-        let dataToSave = prepareSelectedSizesForSaving()
-        // Implement the database saving logic here
-        print("Data to save: \(dataToSave)")
-    }
-    
     
     
     
@@ -379,8 +513,11 @@ extension MainAdminViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.didTapCheckBox = { [weak self] isChecked in
             if isChecked {
                 self?.expandedSections.insert(obj.name) // Expand section
+                self?.selectedSections.insert(obj.name)
+                
             } else {
                 self?.expandedSections.remove(obj.name) // Collapse section
+                self?.selectedSections.remove(obj.name)
             }
             tableView.reloadSections(IndexSet(integer: section), with: .automatic) // Reload the section
         }
@@ -393,98 +530,37 @@ extension MainAdminViewController: UITableViewDataSource, UITableViewDelegate {
         return 40 // Adjust the height as needed
     }
     
-    // Cell for each row in the section
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let color = Array(arrayOfSizes.keys)[indexPath.section]
-        let colorData = arrayOfSizes[color]!
+        let cell = tableView.dequeueReusableCell(withIdentifier: SizeCellCheck.identifier, for: indexPath) as! SizeCellCheck
         
-        // Size cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SizeCellCheck", for: indexPath) as! SizeCellCheck
-        let obj = compents[indexPath.section]
-        
+        let color = compents[indexPath.section]
         var flattenedIndex = 0
-          
-          for sizeCategory in obj.avaible_sizes_categories {
-              let sizeCount = sizeCategory.values.count
-              if indexPath.row < flattenedIndex + sizeCount {
-                  // We found the correct size category and size item for this row
-                  let sizeItem = sizeCategory.values[indexPath.row - flattenedIndex]
-                  cell.valuelbl.text = "\(sizeItem.values)"
-                  cell.typelbl.text = sizeCategory.name.rawValue
-                  return cell
-              }
-              flattenedIndex += sizeCount
-          }
         
-        //        cell.typelbl.text = flattenedSizeItems[indexPath.row].type
-        //        cell.valuelbl.text = "\(flattenedSizeItems[indexPath.row].size)"
-        
-        
-        
-        cell.checkBox.on = checkedStates[indexPath] ?? false // Get checkbox state
-        
-        // Handle checkbox value change for sizes
-        cell.didTapCheckBox = { [weak self] isChecked in
-            self?.checkedStates[indexPath] = isChecked // Update the state
+        for (categoryIndex, sizeCategory) in color.avaible_sizes_categories.enumerated() {
+            let sizeCount = sizeCategory.values.count
+            if indexPath.row < flattenedIndex + sizeCount {
+                let sizeItemIndex = indexPath.row - flattenedIndex
+                let sizeItem = compents[indexPath.section].avaible_sizes_categories[categoryIndex].values[sizeItemIndex]
+                
+                cell.configureCell(with: sizeItem, sizeType: sizeCategory.name.rawValue) { isSelected in
+                    self.compents[indexPath.section].avaible_sizes_categories[categoryIndex].values[sizeItemIndex].isChecked = isSelected
+                }
+                
+                return cell
+            }
+            flattenedIndex += sizeCount
         }
         
         return cell
     }
+    
     
     // Height for each row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40 // Adjust the height for size cells
     }
 }
-
-struct FlattenedSizeItem {
-    let color: String
-    let type: String
-    let size: Int
-}
-
-/*
- 
- 
- extension MainAdminViewController : UITableViewDelegate , UITableViewDataSource {
- func numberOfSections(in tableView: UITableView) -> Int {
- return sectionTitles.count
- }
- 
- func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
- let key = sectionTitles[section]
- return arrayOfSizes[key]?.count ?? 0
- }
- func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
- let key = sectionTitles[section]
- return key
- }
- func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- let cell : CheckSizeCell = tableView.dequeueReusableCell(withIdentifier: CheckSizeCell.identifier, for: indexPath) as! CheckSizeCell
- let key = sectionTitles[indexPath.section]
- let sizes = arrayOfSizes[key]
- if let sizes = sizes {
- cell.sizeValue.text = "\(sizes[indexPath.row])"
- }
- // Set the checkbox state
- cell.checkBox.on = checkedStates[indexPath] ?? false
- 
- // Handle checkbox value change
- cell.checkBox.delegate = cell
- // Handle checkbox tap with a closure
- cell.didTapCheckBox = { [weak self] isChecked in
- self?.checkedStates[indexPath] = isChecked
- }
- return cell
- }
- func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
- return 40
- }
- 
- }
- 
- */
-
 extension MainAdminViewController : UICollectionViewDelegate , UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as! ImageCell
@@ -504,268 +580,17 @@ extension MainAdminViewController : UICollectionViewDelegate , UICollectionViewD
 extension MainAdminViewController : IQDropDownTextFieldDelegate , IQDropDownTextFieldDataSource {
     
     func textField(_ textField: IQDropDownTextField, didSelectItem item: String?, row: Int) {
-        print(item)
-    }
-    
-}
-
-//class CheckSizeCell : UITableViewCell , BEMCheckBoxDelegate {
-//
-//    @IBOutlet weak var sizeValue: UILabel!
-//
-//    @IBOutlet weak var checkBox: BEMCheckBox!
-//
-//    static let identifier = "CheckSizeCell"
-//
-//    var didTapCheckBox: ((Bool) -> Void)?
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        checkBox.delegate = self
-//    }
-//
-//    func didTap(_ checkBox: BEMCheckBox) {
-//        didTapCheckBox?(checkBox.on)
-//    }
-//}
-
-class CheckSizeCell: UITableViewCell, BEMCheckBoxDelegate {
-    
-    // Create the label and checkbox programmatically
-    let sizeValue: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16) // Set your desired font
-        label.textColor = .black // Set your desired text color
-        return label
-    }()
-    
-    let checkBox: BEMCheckBox = {
-        let checkBox = BEMCheckBox()
-        checkBox.translatesAutoresizingMaskIntoConstraints = false
-        checkBox.onAnimationType = .bounce // Customize the animation type if needed
-        checkBox.offAnimationType = .bounce
-        checkBox.boxType = .square
-        checkBox.offFillColor = .darkGray
-        checkBox.onCheckColor = .white
-        return checkBox
-    }()
-    
-    // Closure to handle checkbox tap
-    var didTapCheckBox: ((Bool) -> Void)?
-    
-    // Static identifier for dequeuing
-    static let identifier = "CheckSizeCell"
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        // Add subviews to the content view
-        contentView.addSubview(sizeValue)
-        contentView.addSubview(checkBox)
-        
-        // Set constraints for sizeValue label
-        NSLayoutConstraint.activate([
-            sizeValue.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            sizeValue.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            sizeValue.trailingAnchor.constraint(equalTo: checkBox.leadingAnchor, constant: -16)
-        ])
-        
-        // Set constraints for checkBox
-        NSLayoutConstraint.activate([
-            checkBox.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            checkBox.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            checkBox.widthAnchor.constraint(equalToConstant: 24), // Set a specific width
-            checkBox.heightAnchor.constraint(equalToConstant: 24)
-        ])
-        
-        // Set the checkbox delegate
-        checkBox.delegate = self
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // BEMCheckBoxDelegate method
-    func didTap(_ checkBox: BEMCheckBox) {
-        didTapCheckBox?(checkBox.on)
-    }
-}
-
-
-class SizeCellCheck : UITableViewCell , BEMCheckBoxDelegate {
-    
-    static let identifier = "SizeCellCheck"
-    
-    let typelbl : UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "AirbnbCereal_W_Bd", size: 16)
-        label.text = "US"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let valuelbl : UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "AirbnbCereal_W_Bd", size: 16)
-        label.text = "12"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let checkBox : BEMCheckBox = {
-        let checkBox = BEMCheckBox()
-        checkBox.translatesAutoresizingMaskIntoConstraints = false
-        return checkBox
-    }()
-    
-    var didTapCheckBox: ((Bool) -> Void)?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        checkBox.delegate = self
-    }
-    
-    @objc(didTapCheckBox:) func didTap(_ checkBox: BEMCheckBox) {
-        didTapCheckBox?(checkBox.on)
-    }
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func addSubViews() {
-        self.contentView.addSubview(typelbl)
-        self.contentView.addSubview(valuelbl)
-        self.contentView.addSubview(checkBox)
-        
-        // Activate constraints
-        NSLayoutConstraint.activate([
-            // typelbl constraints
-            typelbl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            typelbl.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            typelbl.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            
-            // valuelbl constraints
-            valuelbl.leadingAnchor.constraint(equalTo: typelbl.trailingAnchor, constant: 10),
-            valuelbl.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            valuelbl.trailingAnchor.constraint(lessThanOrEqualTo: checkBox.leadingAnchor, constant: -10),
-            
-            // checkBox constraints
-            checkBox.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            checkBox.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            checkBox.heightAnchor.constraint(equalToConstant: 24),
-            checkBox.widthAnchor.constraint(equalToConstant: 24),
-        ])
-    }
-    
-    
-    
-    
-}
-
-class ImageCell : UICollectionViewCell  {
-    static let identifier = "ImageCell"
-    
-    @IBOutlet weak var coverImage: UIImageView!
-    
-    func configure(image : UIImage){
-        self.coverImage.image = image
-        
-    }
-    
-}
-
-class SizeHeaderView: UIView , BEMCheckBoxDelegate {
-    
-    // Create the label and checkbox programmatically
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16) // Set your desired font
-        label.textColor = .black // Set your desired text color
-        return label
-    }()
-    
-    let checkBox: BEMCheckBox = {
-        let checkBox = BEMCheckBox()
-        checkBox.translatesAutoresizingMaskIntoConstraints = false
-        checkBox.onAnimationType = .bounce // Customize the animation type if needed
-        checkBox.offAnimationType = .bounce
-        checkBox.boxType = .square
-        checkBox.offFillColor = .darkGray
-        checkBox.onCheckColor = .white
-        return checkBox
-    }()
-    
-    // Closure to handle checkbox tap
-    var didTapCheckBox: ((Bool) -> Void)?
-    
-    // Static identifier for dequeuing
-    static let identifier = "CheckSizeCell"
-    
-    
-    // BEMCheckBoxDelegate method
-    func didTap(_ checkBox: BEMCheckBox) {
-        didTapCheckBox?(checkBox.on)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupView()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupView()
-    }
-    
-    private func setupView() {
-        // Add subviews to the content view
-        addSubview(titleLabel)
-        addSubview(checkBox)
-        
-        // Set constraints for sizeValue label
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: checkBox.leadingAnchor, constant: -16)
-        ])
-        
-        // Set constraints for checkBox
-        NSLayoutConstraint.activate([
-            checkBox.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            checkBox.centerYAnchor.constraint(equalTo: centerYAnchor),
-            checkBox.widthAnchor.constraint(equalToConstant: 24), // Set a specific width
-            checkBox.heightAnchor.constraint(equalToConstant: 24)
-        ])
-        
-        // Set the checkbox delegate
-        checkBox.delegate = self // Set a background color for the header
-    }
-}
-
-class TableViewAdjusetHeight : UITableView {
-    override var intrinsicContentSize: CGSize{
-        self.layoutIfNeeded()
-        return self.contentSize
-    }
-    
-    
-    override var contentSize: CGSize {
-        didSet{
-            self.invalidateIntrinsicContentSize()
+        // Handle the selection using a closure
+        guard let selectedItem = item else {
+            return
         }
+        if textField == brandsDropDown {
+            selectedBrandModel = selectedItem
+        }else if textField == genderDropDown {
+            selectedGender = selectedItem
+        }
+        
+        
     }
     
-    override func reloadData() {
-        super.reloadData()
-        self.invalidateIntrinsicContentSize()
-    }
 }
