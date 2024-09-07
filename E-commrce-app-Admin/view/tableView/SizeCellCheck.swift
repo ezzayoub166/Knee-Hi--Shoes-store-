@@ -53,7 +53,7 @@ class SizeCellCheck : UITableViewCell , BEMCheckBoxDelegate {
     }
     
     func configureCell(with sizeItem: Size_Item_model, sizeType: String, onSelect: @escaping (Bool) -> Void) {
-          valuelbl.text = "\(sizeItem.values)"
+          valuelbl.text = "\(sizeItem.value)"
           typelbl.text = sizeType
         checkBox.on = sizeItem.isChecked ?? false
           didTapCheckBox = onSelect

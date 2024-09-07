@@ -76,8 +76,8 @@ extension Requests {
         }
     }
     
-    static func getProducts(completion: @escaping (Result<[Shose_model], Error>) -> Void , attribute : String){
-        Constants.dbPath.collection("shoses").whereField(attribute, isEqualTo:true).limit(to: 4).getDocuments { snapshot, error in
+    static func getProducts(completion: @escaping (Result<[Shose_model], Error>) -> Void , attribute : String , limit : Int){
+        Constants.dbPath.collection("shoses").whereField(attribute, isEqualTo:true).limit(to: limit).addSnapshotListener { snapshot, error in
             if error != nil {
                 print("Error getting documents: \(String(describing: error?.localizedDescription))")
                 completion(.failure(error!))
@@ -93,9 +93,6 @@ extension Requests {
             }
             
             completion(.success(shoses))
-            
-            
-            
         }
     }
     

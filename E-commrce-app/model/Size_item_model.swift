@@ -8,19 +8,15 @@
 import Foundation
 
 class Size_Item_model  {
-    static func == (lhs: Size_Item_model, rhs: Size_Item_model) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
     
     var id : String
-    var values : Int
+    var value : Int
     var isChecked : Bool? = false
     
     
-    init(id: String, values: Int , isChecked : Bool = false) {
+    init(id: String, value: Int , isChecked : Bool = false) {
         self.id = id
-        self.values = values
+        self.value = value
         self.isChecked = isChecked
     }
     
@@ -28,12 +24,12 @@ class Size_Item_model  {
     // Initializer from dictionary (Optional)
     convenience init?(from dictionary: [String: Any]) {
         guard let id = dictionary["id"] as? String,
-              let values = dictionary["values"] as? Int,
+              let value = dictionary["value"] as? Int,
               let isChecked = dictionary["isChecked"] as? Bool else {
             return nil
         }
 
-        self.init(id: id, values: values, isChecked: isChecked)
+        self.init(id: id, value: value, isChecked: isChecked)
     }
     
     // Convert to dictionary for Firestore
@@ -41,7 +37,8 @@ class Size_Item_model  {
           var dict: [String: Any] = [:]
           
           dict["id"] = id
-          dict["values"] = values
+          dict["value"] = value
+          dict["isChecked"] = isChecked
           
           return dict
       }

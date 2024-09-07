@@ -7,9 +7,6 @@
 
 import Foundation
 class RadioModle   {
-    static func == (lhs: RadioModle, rhs: RadioModle) -> Bool {
-        return lhs.name == rhs.name
-    }
     
     var id : Int
     var name : String
@@ -41,7 +38,7 @@ class RadioModle   {
         init?(from dictionary: [String: Any]) {
             guard let id = dictionary["id"] as? Int,
                   let name = dictionary["name"] as? String,
-                  let availableSizesCategoriesArray = dictionary["available_sizes_categories"] as? [[String: Any]] else {
+                  let availableSizesCategoriesArray = dictionary["avaible_sizes_categories"] as? [[String: Any]] else {
                 return nil
             }
 

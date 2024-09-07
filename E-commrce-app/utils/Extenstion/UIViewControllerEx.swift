@@ -24,21 +24,21 @@ extension UIViewController {
     
     
     
-    var topMostViewController : UIViewController?{
+    var topMostViewController: UIViewController? {
         if let navigationController = self as? UINavigationController {
             return navigationController.topViewController?.topMostViewController
-        }else if let tabBarController = self as? UITabBarController {
-            if let selectedViewController = tabBarController.selectedViewController{
+        } else if let tabBarController = self as? UITabBarController {
+            if let selectedViewController = tabBarController.selectedViewController {
                 return selectedViewController.topMostViewController
             }
-            return tabBarController.topMostViewController
-        }else if let presentedViewController = self.presentedViewController{
+            return tabBarController
+        } else if let presentedViewController = self.presentedViewController {
             return presentedViewController.topMostViewController
-        }
-        else{
+        } else {
             return self
         }
     }
+
     func push(){
         AppDelegate.shared?.rootNaviagtionController?.pushViewController(self, animated: true)
     }

@@ -50,8 +50,8 @@ class HomeVC: UIViewController {
     
     var category_array : [Category_Item] = []
     
-    var popular_shoses : [Shose_model] = []
-    var new_arrival_shoses : [Shose_model] = []
+    var popular_shoses : [ShoeModel] = []
+    var new_arrival_shoses : [ShoeModel] = []
     
     
     
@@ -62,10 +62,9 @@ class HomeVC: UIViewController {
         setupData()
         fetchData()
         
-        Constants.dbPath.collection("shoses").whereField("isPopular", isEqualTo:true).limit(to: 4).getDocuments { snapshot, error in
+        Constants.dbPath.collection("shoses").whereField("isPopular", isEqualTo:true).limit(to: 6).getDocuments { snapshot, error in
             if error != nil {
                 print("Error getting documents: \(String(describing: error?.localizedDescription))")
-
                 return
             }
             guard let documents = snapshot?.documents else {
@@ -76,33 +75,12 @@ class HomeVC: UIViewController {
                 return Shose_model.init(from: doc)
             }
             
-            print(shoses)
+            print(shoses.map{print($0.colors.map{$0.codeColor})})
             
             
         }
-       
-        // Usage
-//        Requests.getProducts { result in
-//                switch result {
-//                case .success(let shosesIsPopular):
-//                    print(shosesIsPopular)
-//                    // Perform additional background tasks if needed
-//                    
-//                    // If you need to update the UI:
-//                    DispatchQueue.main.async {
-//                        // Update UI here
-//                    }
-//                case .failure(let error):
-//                    print("Failed to fetch products: \(error)")
-//                }
-//        }
-
-//        Task{
-//            await ConstantsFunctions.uploadCategoryData()
-//        }
-
-        
     }
+        
 
     @IBAction func seeAllPopular(_ sender: Any) {
         let vc = UIStoryboard.mainStoryBoard.instantiateViewController(identifier: "ItemsVC")
@@ -188,22 +166,23 @@ extension HomeVC {
     
     private func fetchPopularProducts(){
         self.popular_shoses.removeAll()
-        self.popular_indictor.startAnimating()
-        Requests.getProducts(completion: { result in
+//        self.popular_indictor.startAnimating()
+        ShoeService.shared.fetchAllShoes(completion: { result in
             switch result {
             case .success(let shoses):
                 self.popular_shoses = shoses
-                print(shoses[0].images[0])
+//                print(shoses)
+//                print(self.popular_shoses.map{$0.colors.flatMap{$0.codeColor}})
                 DispatchQueue.main.async {
                     self.popularShoesCollectionView.reloadData()
-                    self.popular_indictor.stopAnimating()
-                    self.popular_indictor.hidesWhenStopped = true
+//                    self.popular_indictor.stopAnimating()
+//                    self.popular_indictor.hidesWhenStopped = true
                 }
             case .failure(let failure):
                 print(failure.localizedDescription)
         
             }
-        }, attribute: "isPopular")
+        })
         
     }
 }
@@ -265,8 +244,9 @@ extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
             
         }else if collectionView == popularShoesCollectionView {
             print("Seletect")
-            let vc = UIStoryboard.mainStoryBoard.instantiateViewController(withIdentifier: "DetailsVC")
-            vc.push()
+            let vc = UIStoryboard.mainStoryBoard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
+            vc?.obj = popular_shoses[indexPath.row]
+            vc?.push()
         }
 
     }
@@ -284,8 +264,8 @@ extension HomeVC : UICollectionViewDelegateFlowLayout{
             let padding: CGFloat = 10 // 10 points for each side
             let collectionViewSize = collectionView.frame.width - padding
 
-            return CGSize(width: collectionViewSize/2 - 10, height:200)
-//            
+            return CGSize(width: collectionViewSize/2 - 5, height:200)
+//
 //            
 //            let width : CGFloat = (collectionView.frame.width - 20)/2
 //            //            let height : CGFloat = width * (107/148)
@@ -327,4 +307,97 @@ class CollectionViewAdjusetHeight : UICollectionView {
         super.reloadData()
         self.invalidateIntrinsicContentSize()
     }
+}
+
+
+import FirebaseFirestore
+
+import Foundation
+
+struct ShoeModel: Codable {
+    let Description: String
+    let Gender: String
+    let colors: [Color]
+    let shoseId : String
+    let images: [String]
+    let isNewArrival: Bool
+    let isPopular: Bool
+    let isWishList: Bool
+    let price: String
+    let shoseBrand: String
+    let title: String
+}
+
+struct Color: Codable {
+    let codeColor: String
+    let id: Int
+    let name: String
+    let avaible_sizes_categories: [SizeCategory]
+
+}
+
+struct SizeCategory: Codable {
+    let name: String
+    let values: [Size]
+}
+
+struct Size: Codable {
+    let id: String
+    let value: Int
+}
+
+
+
+class ShoeService {
+    private let db = Firestore.firestore()
+    
+    static let shared = ShoeService()
+    
+    func fetchShoe(withId id: String, completion: @escaping (Result<ShoeModel, Error>) -> Void) {
+        let docRef = db.collection("shoses").document(id)
+        
+        docRef.getDocument { (document, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            guard let document = document, document.exists, let data = document.data() else {
+                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Document does not exist."])))
+                return
+            }
+            
+            do {
+                let shoe = try Firestore.Decoder().decode(ShoeModel.self, from: data)
+                completion(.success(shoe))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchAllShoes(completion: @escaping (Result<[ShoeModel], Error>) -> Void) {
+          db.collection("shoses").getDocuments { (querySnapshot, error) in
+              if let error = error {
+                  completion(.failure(error))
+                  return
+              }
+              
+              guard let documents = querySnapshot?.documents else {
+                  completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No documents found."])))
+                  return
+              }
+              
+              do {
+                  // Map documents to ShoeModel
+                  let shoes = try documents.map { document -> ShoeModel in
+                      let data = document.data()
+                      return try Firestore.Decoder().decode(ShoeModel.self, from: data)
+                  }
+                  completion(.success(shoes))
+              } catch {
+                  completion(.failure(error))
+              }
+          }
+      }
 }

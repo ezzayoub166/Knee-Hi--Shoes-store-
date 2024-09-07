@@ -20,7 +20,7 @@ target 'E-commrce-app' do
     pod 'BEMCheckBox'
     pod 'YPImagePicker'
     pod 'ProgressHUD'
-#    pod 'Kingfisher', '~> 7.0'
+#    pod 'Kingfisher'
     
     
   end

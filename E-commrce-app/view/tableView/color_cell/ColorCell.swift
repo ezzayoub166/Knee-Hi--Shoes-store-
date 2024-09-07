@@ -12,9 +12,9 @@ class ColorCell : UICollectionViewCell{
     
     @IBOutlet weak var colorView: UIView!
     
-    func configure(model : RadioModle){
+    func configure(model : Color){
         if let view = colorView {
-            view.backgroundColor = model.codeColor?.color_
+            view.backgroundColor = model.codeColor.color_
             
         }else{
             print("nill")

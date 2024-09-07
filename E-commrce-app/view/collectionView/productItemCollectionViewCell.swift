@@ -33,12 +33,13 @@ class productItemCollectionViewCell: UICollectionViewCell {
     @IBAction func addBtn(_ sender: Any) {
     }
     
-    func configure(model : Shose_model){
-//        if let obj = model {
+    func configure(model : ShoeModel){
         self.img_shose.sd_setImage(with: URL(string: model.images[0]))
         self.title_shose.text = model.title
-        self.price_shose.text = model.price! + " $"
-//        }
+        self.price_shose.text = model.price + " $"
+        
+        
+
         
     }
 }

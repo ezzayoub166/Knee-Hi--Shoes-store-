@@ -83,10 +83,11 @@ class MainAdminViewController: UIViewController {
 
         
         let selectedSizes = compents.map{ item in
-            (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.values})})
+            (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.value})})
         }
         
         var radio_models : [RadioModle] = []
+        
         
         for selectedSize in selectedSizes {
             if(self.expandedSections.contains(selectedSize.0.name)){
@@ -99,10 +100,10 @@ class MainAdminViewController: UIViewController {
                 }
                 
                 // Create a new RadioModle with the filtered categories
-                var obj = RadioModle(
+                let obj = RadioModle(
                     id: selectedSize.0.id,
                     name: selectedSize.0.name,
-                    codeColor: selectedSize.0.codeColor,
+                    codeColor: selectedSize.0.codeColor ?? "",
                     avaible_sizes_categories: filteredCategories
                 )
                 
@@ -144,29 +145,33 @@ class MainAdminViewController: UIViewController {
         guard !selectedBrandModel.isEmpty else {
             //            self.showToast("gender is required")
             ProgressHUD.failed("Brand is required")
-            
             return
         }
         
-        guard !arrayOfUrls.isEmpty else{
+        guard !arrayOfUrls.isEmpty else {
             ProgressHUD.failed("Images is required")
             return
         }
         
         
-        let object = Shose_model(title: price, price: price, description: descreption, isPopular: isPopularCheck.on, isNewArrival: isNewArrivalCheck.on, isWishList: false, shose_brand: selectedBrandModel, gender: Gender(rawValue: selectedGender) ?? Gender.none, colors: radio_models, images: arrayOfUrls)
+        let object = Shose_model(title: title, shoseId: UUID().uuidString, price: price, description: descreption, isPopular: isPopularCheck.on, isNewArrival: isNewArrivalCheck.on, isWishList: false, shose_brand: selectedBrandModel, gender: Gender(rawValue: selectedGender) ?? Gender.none, colors: radio_models, images: arrayOfUrls)
+        
+        
         SKActivityIndicator.show()
-        _db.collection("shoses").addDocument(data: object.toDictionary()) { error in
+        var ref: DocumentReference? = nil
+        ref = _db.collection("shoses").addDocument(data: object.toDictionary()) { error in
             if error != nil{
                 SKActivityIndicator.dismiss()
                 self.showErrorMessage(message: error?.localizedDescription)
 
             }else{
+                object.shoseId = ref!.documentID
                 SKActivityIndicator.dismiss()
                 self.showAlert(title: "SUCCESS", message: "ADDED PRODUCT") {
                     self.titletxt.text = ""
                     self.descreptiontxt.text = ""
                     self.pricetxt.text = ""
+                    self.arrayOfUrls.removeAll()
                     self.arrayoOfImages.removeAll()
                     self.expandedSections.removeAll()
                     self.collectionView.reloadData()
@@ -205,7 +210,7 @@ class MainAdminViewController: UIViewController {
     
     @IBAction func setImagesForProduct(_ sender: Any) {
         let selectedSizes = compents.map{ item in
-            (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.values})})
+            (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.value})})
         }
         
         for selectedSize in selectedSizes {
@@ -222,7 +227,7 @@ class MainAdminViewController: UIViewController {
                 var obj = RadioModle(
                     id: selectedSize.0.id,
                     name: selectedSize.0.name,
-                    codeColor: selectedSize.0.codeColor,
+                    codeColor: selectedSize.0.codeColor ?? "",
                     avaible_sizes_categories: filteredCategories
                 )
                 
