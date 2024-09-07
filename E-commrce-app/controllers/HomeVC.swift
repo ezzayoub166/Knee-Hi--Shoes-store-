@@ -166,7 +166,7 @@ extension HomeVC {
     
     private func fetchPopularProducts(){
         self.popular_shoses.removeAll()
-//        self.popular_indictor.startAnimating()
+        self.popular_indictor.startAnimating()
         ShoeService.shared.fetchAllShoes(completion: { result in
             switch result {
             case .success(let shoses):
@@ -175,8 +175,8 @@ extension HomeVC {
 //                print(self.popular_shoses.map{$0.colors.flatMap{$0.codeColor}})
                 DispatchQueue.main.async {
                     self.popularShoesCollectionView.reloadData()
-//                    self.popular_indictor.stopAnimating()
-//                    self.popular_indictor.hidesWhenStopped = true
+                    self.popular_indictor.stopAnimating()
+                    self.popular_indictor.hidesWhenStopped = true
                 }
             case .failure(let failure):
                 print(failure.localizedDescription)

@@ -19,7 +19,7 @@ class DetailsVC: UIViewController {
     
     @IBOutlet weak var descreptionlbl: UILabel!
     
-    @IBOutlet weak var imgCover: UIImageView!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
     
     
     var obj : ShoeModel?
@@ -215,7 +215,7 @@ extension DetailsVC {
             self.pop()
         }
         makeSomeEffective()
-        imgCover.setImage(url: obj?.images.first ?? "")
+//        imgCover.setImage(url: obj?.images.first ?? "")
         title_lbl.text = obj?.title
         price_lbl.text = (obj?.price ?? "0") + " $"
         descreptionlbl.text = obj?.Description
@@ -258,6 +258,12 @@ extension DetailsVC {
         sizesNumbersCollectionView.delegate = self
         sizesStringCollectionView.isScrollEnabled = false
         
+        imageCollectionView.delegate = self
+        imageCollectionView.dataSource = self
+        imageCollectionView.showsHorizontalScrollIndicator = false
+        imageCollectionView.register(UINib(nibName: imageCoverDeatilsCell.identifier, bundle: nil), forCellWithReuseIdentifier: imageCoverDeatilsCell.identifier)
+    
+        
         
         
     }
@@ -279,6 +285,8 @@ extension DetailsVC : UICollectionViewDelegate , UICollectionViewDataSource {
         case sizesNumbersCollectionView:
             self.sizesNumbersCollectionView.reloadData()
             return obj?.colors[self.selectedColorIndex].avaible_sizes_categories[self.selectedSizeTypeIndex].values.count ?? 0
+        case imageCollectionView:
+            return obj?.images.count ?? 0
         default:
             return 0
         }
@@ -318,26 +326,14 @@ extension DetailsVC : UICollectionViewDelegate , UICollectionViewDataSource {
             cell.configure(with: value?.value ?? 0, isSelected: isSelected)
             
             return cell
-            
-            //            let cell : SizeValueCell = collectionView.dequeueCVCell(indexPath: indexPath)
-            //            cell.backgroundColor = .blue
-            //            let selected = selectedSizeValueIndex == indexPath.row
-            //
-            //            let value = obj!.colors[selectedColorIndex].avaible_sizes_categories[selectedSizeTypeIndex].values[indexPath.row].value
-            //
-            ////            if selected {
-            ////                cell.main_view.borderColor = .black
-            ////                cell.main_view.borderWidth = 1
-            ////                self.sizesNumbersCollectionView.reloadData()
-            ////            }else{
-            ////                cell.main_view.borderColor = .clear
-            ////                cell.main_view.borderWidth = 0
-            ////                self.sizesNumbersCollectionView.reloadData()
-            ////
-            ////            }
-            //            cell.configure(with: value, isSelected: <#T##Bool#>)
-            //            return cell
-        }else {
+        }else if collectionView == imageCollectionView {
+            let cell : imageCoverDeatilsCell = collectionView.dequeueCVCell(indexPath: indexPath)
+            let image = obj?.images[indexPath.row]
+            cell.configure(imageUrl: image ?? "")
+            return cell
+        }
+        
+        else {
             return UICollectionViewCell()
         }
     }
@@ -360,8 +356,8 @@ extension DetailsVC : UICollectionViewDelegate , UICollectionViewDataSource {
             sizesNumbersCollectionView.reloadData()
         }
     }
-    
 }
+
 
 
 

@@ -100,6 +100,8 @@
 		436736AD2C748F8C0080F041 /* Main_Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436736AB2C748F8C0080F041 /* Main_Admin.storyboard */; };
 		436736AF2C748F8D0080F041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436736AE2C748F8D0080F041 /* Assets.xcassets */; };
 		436736B22C748F8D0080F041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436736B02C748F8D0080F041 /* LaunchScreen.storyboard */; };
+		43A466862C8CDE48003D5453 /* imageCoverDeatilsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A466842C8CDE48003D5453 /* imageCoverDeatilsCell.swift */; };
+		43A466872C8CDE48003D5453 /* imageCoverDeatilsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A466852C8CDE48003D5453 /* imageCoverDeatilsCell.xib */; };
 		43A5ADF82C6DE65E00555D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5ADF72C6DE65E00555D01 /* Assets.xcassets */; };
 		43A5AE1F2C6DE78100555D01 /* MyCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5AE102C6DE78100555D01 /* MyCartVC.swift */; };
 		43A5AE202C6DE78100555D01 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5AE112C6DE78100555D01 /* HomeVC.swift */; };
@@ -269,6 +271,8 @@
 		436736B12C748F8D0080F041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		436736B32C748F8D0080F041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		436736B72C7490460080F041 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43A466842C8CDE48003D5453 /* imageCoverDeatilsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCoverDeatilsCell.swift; sourceTree = "<group>"; };
+		43A466852C8CDE48003D5453 /* imageCoverDeatilsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = imageCoverDeatilsCell.xib; sourceTree = "<group>"; };
 		43A5ADF72C6DE65E00555D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A5ADFC2C6DE65E00555D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A5AE0F2C6DE78100555D01 /* E-commrce-app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "E-commrce-app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -592,6 +596,15 @@
 			path = "E-commrce-app-Admin";
 			sourceTree = "<group>";
 		};
+		43A466832C8CDE02003D5453 /* imageCoverDeatilsCell */ = {
+			isa = PBXGroup;
+			children = (
+				43A466842C8CDE48003D5453 /* imageCoverDeatilsCell.swift */,
+				43A466852C8CDE48003D5453 /* imageCoverDeatilsCell.xib */,
+			);
+			path = imageCoverDeatilsCell;
+			sourceTree = "<group>";
+		};
 		43A5ADE22C6DE65D00555D01 = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +830,7 @@
 		43A5AEA52C6DE8EB00555D01 /* collectionView */ = {
 			isa = PBXGroup;
 			children = (
+				43A466832C8CDE02003D5453 /* imageCoverDeatilsCell */,
 				43A5AEA92C6DE90300555D01 /* favouriteItemCollectionViewCell.swift */,
 				43A5AEAD2C6DE90300555D01 /* favouriteItemCollectionViewCell.xib */,
 				43A5AEAC2C6DE90300555D01 /* newArrivalCollectionViewCell.swift */,
@@ -1096,6 +1110,7 @@
 			files = (
 				43DDAC392C6F6A65003A7875 /* cartItemTCell.xib in Resources */,
 				43DDAC362C6F66FF003A7875 /* AirbnbCereal_W_Bk.otf in Resources */,
+				43A466872C8CDE48003D5453 /* imageCoverDeatilsCell.xib in Resources */,
 				43DDAC372C6F6A55003A7875 /* CustomNavigationBarViewController.xib in Resources */,
 				43DDAC3E2C6F6A71003A7875 /* productItemCollectionViewCell.xib in Resources */,
 				43DDAC352C6F66FF003A7875 /* AirbnbCereal_W_Lt.otf in Resources */,
@@ -1294,6 +1309,7 @@
 				43DDAC0B2C6F6445003A7875 /* PopupDialog+Keyboard.swift in Sources */,
 				43A5AE532C6DE81200555D01 /* WaveformImageDrawer.swift in Sources */,
 				436736652C7381290080F041 /* SizeValueCell.swift in Sources */,
+				43A466862C8CDE48003D5453 /* imageCoverDeatilsCell.swift in Sources */,
 				43DDAC182C6F6445003A7875 /* PopupDialogDefaultView.swift in Sources */,
 				43DDAC102C6F6445003A7875 /* UIView+Animations.swift in Sources */,
 				43DDAC152C6F6445003A7875 /* UIImageView+Calculations.swift in Sources */,
