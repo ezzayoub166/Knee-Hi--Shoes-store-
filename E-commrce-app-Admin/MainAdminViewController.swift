@@ -69,18 +69,18 @@ class MainAdminViewController: UIViewController {
         setupview()
         setupdata()
         fetchData()
-     
+        
         
         
         
     }
     
     @IBAction func saveProductTp(_ sender: Any) {
-//        
-//        SKActivityIndicator.show()
-//        uploadImages(images: arrayoOfImages)
-//        SKActivityIndicator.show()
-
+        //
+        //        SKActivityIndicator.show()
+        //        uploadImages(images: arrayoOfImages)
+        //        SKActivityIndicator.show()
+        
         
         let selectedSizes = compents.map{ item in
             (item,item.avaible_sizes_categories.map{item in (item.name.rawValue,item.values.filter{$0.isChecked!}.compactMap{$0.value})})
@@ -154,7 +154,7 @@ class MainAdminViewController: UIViewController {
         }
         
         
-        let object = Shose_model(title: title, shoseId: UUID().uuidString, price: price, description: descreption, isPopular: isPopularCheck.on, isNewArrival: isNewArrivalCheck.on, isWishList: false, shose_brand: selectedBrandModel, gender: Gender(rawValue: selectedGender) ?? Gender.none, colors: radio_models, images: arrayOfUrls)
+        let object = Shose_model(title: title, shoseId: "", price: price, description: descreption, isPopular: isPopularCheck.on, isNewArrival: isNewArrivalCheck.on, isWishList: false, shose_brand: selectedBrandModel, gender: Gender(rawValue: selectedGender) ?? Gender.none, colors: radio_models, images: arrayOfUrls)
         
         
         SKActivityIndicator.show()
@@ -163,28 +163,31 @@ class MainAdminViewController: UIViewController {
             if error != nil{
                 SKActivityIndicator.dismiss()
                 self.showErrorMessage(message: error?.localizedDescription)
-
-            }else{
-                object.shoseId = ref!.documentID
-                SKActivityIndicator.dismiss()
-                self.showAlert(title: "SUCCESS", message: "ADDED PRODUCT") {
-                    self.titletxt.text = ""
-                    self.descreptiontxt.text = ""
-                    self.pricetxt.text = ""
-                    self.arrayOfUrls.removeAll()
-                    self.arrayoOfImages.removeAll()
-                    self.expandedSections.removeAll()
-                    self.collectionView.reloadData()
-                    self.sizesTableView.reloadData()
-                    self.dismiss(animated: true)
+                
+            } else if let ref = ref {
+                // Get document ID and update the document with it
+                ref.updateData(["shoseId": ref.documentID]) { error in
+                    SKActivityIndicator.dismiss()
+                    self.showAlert(title: "SUCCESS", message: "ADDED PRODUCT") {
+                        self.titletxt.text = ""
+                        self.descreptiontxt.text = ""
+                        self.pricetxt.text = ""
+                        self.arrayOfUrls.removeAll()
+                        self.arrayoOfImages.removeAll()
+                        self.expandedSections.removeAll()
+                        self.collectionView.reloadData()
+                        self.sizesTableView.reloadData()
+                        self.dismiss(animated: true)
+                    }
+                    if let error = error {
+                        self.showErrorMessage(message: error.localizedDescription)
+                    } else {
+                        // Success, document ID saved inside the document
+                        print("Document successfully updated with ID: \(ref.documentID)")
+                    }
                 }
             }
         }
-        
-        
-        
-        
-        
     }
     
     func showAlert(title : String? , message : String?,buttonTitle1 : String = "OK", buttonAction1:@escaping(() -> Void)){

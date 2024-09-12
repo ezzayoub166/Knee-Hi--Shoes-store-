@@ -15,6 +15,10 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var popularShoesCollectionView: CollectionViewAdjusetHeight!
     
+    @IBOutlet weak var constraint: NSLayoutConstraint!
+    
+   
+    
     @IBOutlet weak var newArrivalsCollectionView: UICollectionView!
     
     
@@ -31,6 +35,9 @@ class HomeVC: UIViewController {
     @IBOutlet weak var popular_indictor: UIActivityIndicatorView!
     
     
+    
+    @IBOutlet weak var newArrival_indicator: UIActivityIndicatorView!
+    
     var selectedIndexPath: IndexPath? = IndexPath(row: 0, section: 0){
         didSet{
             DispatchQueue.main.async {
@@ -38,6 +45,8 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    var chooseBrand : String = ""
     
     var isSelected : Int = 0 {
         didSet{
@@ -50,8 +59,11 @@ class HomeVC: UIViewController {
     
     var category_array : [Category_Item] = []
     
-    var popular_shoses : [ShoeModel] = []
-    var new_arrival_shoses : [ShoeModel] = []
+    var original_popular_shoes: [ShoeModel] = []
+        var original_new_arrival_shoes: [ShoeModel] = []
+        
+        var popular_shoses: [ShoeModel] = []
+        var new_arrival_shoses: [ShoeModel] = []
     
     
     
@@ -61,37 +73,32 @@ class HomeVC: UIViewController {
         setupView()
         setupData()
         fetchData()
-        
-        Constants.dbPath.collection("shoses").whereField("isPopular", isEqualTo:true).limit(to: 6).getDocuments { snapshot, error in
-            if error != nil {
-                print("Error getting documents: \(String(describing: error?.localizedDescription))")
-                return
-            }
-            guard let documents = snapshot?.documents else {
-                return
-            }
-            
-            let shoses : [Shose_model] = documents.compactMap { doc in
-                return Shose_model.init(from: doc)
-            }
-            
-            print(shoses.map{print($0.colors.map{$0.codeColor})})
-            
-            
-        }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updatePopularShoesCollectionHeight()
+    }
+
+    private func updatePopularShoesCollectionHeight() {
+        constraint.constant = popularShoesCollectionView.collectionViewLayout.collectionViewContentSize.height
+    }
+
         
 
     @IBAction func seeAllPopular(_ sender: Any) {
-        let vc = UIStoryboard.mainStoryBoard.instantiateViewController(identifier: "ItemsVC")
-        vc.push()
+        let vc = UIStoryboard.mainStoryBoard.instantiateViewController(identifier: "ItemsVC") as? ItemsVC
+        vc?.arry_of_shoses = popular_shoses
+        vc?.push()
     }
     
     
-    
-    
-    
-    
+    @IBAction func sellAllNewArrivals(_ sender: Any) {
+        let vc = UIStoryboard.mainStoryBoard.instantiateViewController(identifier: "ItemsVC") as? ItemsVC
+        vc?.arry_of_shoses = new_arrival_shoses
+        vc?.push()
+    }
+     
     
 }
 extension HomeVC {
@@ -103,6 +110,8 @@ extension HomeVC {
         popularShoesCollectionView.dataSource = self
         popularShoesCollectionView.delegate = self
         popularShoesCollectionView.showsVerticalScrollIndicator = false
+        popularShoesCollectionView.isScrollEnabled = false
+
         
         newArrivalsCollectionView.delegate  = self
         newArrivalsCollectionView.dataSource = self
@@ -111,15 +120,11 @@ extension HomeVC {
         newArrivalsCollectionView.isScrollEnabled = true
         popularShoesCollectionView.isScrollEnabled = false
         
-        
-//        categoriesCollectionView.register(UINib(nibName: CategoriesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoriesCollectionViewCell.identifier)
-        
         categoriesCollectionView.register(UINib(nibName: selectedCategoriesCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: selectedCategoriesCollectionViewCell.identifier)
         
         popularShoesCollectionView.register(UINib(nibName: productItemCollectionViewCell.identifier, bundle: nil),forCellWithReuseIdentifier: productItemCollectionViewCell.identifier)
         
-        newArrivalsCollectionView.register(UINib(nibName: newArrivalCollectionViewCell.identifier, bundle: nil),forCellWithReuseIdentifier: newArrivalCollectionViewCell.identifier)
-        
+        newArrivalsCollectionView.register(ShoeNewArrivalCell.self, forCellWithReuseIdentifier: ShoeNewArrivalCell.identifier)
         
         
     }
@@ -129,8 +134,15 @@ extension HomeVC {
     func fetchData(){
         getCategories()
         fetchPopularProducts()
+        fetchNewArrivalProducts()
         
     }
+    
+    
+    
+    //MARK: - for this status
+    // when selected the specfic category we need to filter array of populars and new Arrival
+    //Based on Brand
     
     
     private func getCategories(){
@@ -151,8 +163,6 @@ extension HomeVC {
                         self.category_indictor.stopAnimating()
                         self.category_indictor.hidesWhenStopped = true
                     }
-                 
-
                     
                 })
             case .none:
@@ -166,25 +176,82 @@ extension HomeVC {
     
     private func fetchPopularProducts(){
         self.popular_shoses.removeAll()
-        self.popular_indictor.startAnimating()
-        ShoeService.shared.fetchAllShoes(completion: { result in
+//        self.popular_indictor.startAnimating()
+        ShoeService.shared.fetchDataBasedOnAttribute(completion: { result  in
             switch result {
             case .success(let shoses):
-                self.popular_shoses = shoses
-//                print(shoses)
-//                print(self.popular_shoses.map{$0.colors.flatMap{$0.codeColor}})
-                DispatchQueue.main.async {
-                    self.popularShoesCollectionView.reloadData()
-                    self.popular_indictor.stopAnimating()
-                    self.popular_indictor.hidesWhenStopped = true
-                }
+                // Store the fetched shoes in the original array
+                        self.original_popular_shoes = shoses
+                        // Initially, show all shoes (unfiltered)
+                        self.popular_shoses = self.original_popular_shoes
+                        
+                        DispatchQueue.main.async {
+                            self.popularShoesCollectionView.reloadData()
+                            self.updatePopularShoesCollectionHeight()
+                        }
+//                self.popular_shoses = shoses
+//                DispatchQueue.main.async { [self] in
+//                    self.popularShoesCollectionView.reloadData()
+//                    self.popularShoesCollectionView.layoutIfNeeded() // Ensure the layout is updated before calculating the height
+//                    updatePopularShoesCollectionHeight()
+////                    self.popular_indictor.stopAnimating()
+////                    self.popular_indictor.hidesWhenStopped = true
+//                }
             case .failure(let failure):
                 print(failure.localizedDescription)
-        
             }
-        })
+        }, attribute: "isPopular", limit: 100)
         
     }
+    
+    private func fetchNewArrivalProducts(){
+//        self.newArrival_indicator.startAnimating()
+        self.new_arrival_shoses.removeAll()
+        ShoeService.shared.fetchDataBasedOnAttribute(completion: { result  in
+            switch result {
+            case .success(let shoses):
+                // Store the fetched shoes in the original array
+                      self.original_new_arrival_shoes = shoses
+                      // Initially, show all shoes (unfiltered)
+                      self.new_arrival_shoses = self.original_new_arrival_shoes
+                      
+                      DispatchQueue.main.async {
+                          self.newArrivalsCollectionView.reloadData()
+                      }
+            case .failure(let failure):
+                print(failure.localizedDescription)
+            }
+        }, attribute: "isNewArrival", limit: 100)
+        
+    }
+    
+    private func filterShoesBySelectedBrand() {
+        // If no brand is selected, show all shoes
+        if chooseBrand.isEmpty {
+            self.popular_shoses = original_popular_shoes
+            self.new_arrival_shoses = original_new_arrival_shoes
+        } else {
+            // Filter popular shoes by selected brand
+            self.popular_shoses = original_popular_shoes.filter { shoe in
+                return shoe.shoseBrand.lowercased() == chooseBrand.lowercased()
+            }
+            
+            // Filter new arrival shoes by selected brand
+            self.new_arrival_shoses = original_new_arrival_shoes.filter { shoe in
+                return shoe.shoseBrand.lowercased() == chooseBrand.lowercased()
+            }
+        }
+        
+        // Reload the collection views with filtered data
+        DispatchQueue.main.async {
+            self.popularShoesCollectionView.reloadData()
+            self.newArrivalsCollectionView.reloadData()
+        }
+    }
+
+
+    
+    
 }
 extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -193,7 +260,7 @@ extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
         }else if collectionView == popularShoesCollectionView  {
             return popular_shoses.count
         } else {
-            return 5
+            return new_arrival_shoses.count
         }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -208,7 +275,7 @@ extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
 
             if isSelected {
                 cell.mainView.backgroundColor = "5B9EE1".color_
-
+//                self.chooseBrand = self.category_array[indexPath.row].title ?? "Nike"
             }else{
                 cell.mainView.backgroundColor = greyWithOpacity
                 cell.titlelbl.textColor = .black.withAlphaComponent(0.3)
@@ -223,7 +290,9 @@ extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
         }
         
         else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: newArrivalCollectionViewCell.identifier, for: indexPath) as!newArrivalCollectionViewCell
+            let cell: ShoeNewArrivalCell = collectionView.dequeueCVCell(indexPath: indexPath)
+            let obj = new_arrival_shoses[indexPath.row]
+            cell.configure(with: obj)
             return cell
         }
     }
@@ -232,20 +301,33 @@ extension HomeVC : UICollectionViewDataSource , UICollectionViewDelegate{
         if collectionView == categoriesCollectionView {
             let previousSelectedIndexPath = selectedIndexPath
                  selectedIndexPath = indexPath
+            
+            // Update selected brand
+                   chooseBrand = category_array[indexPath.row].title ?? ""
+
+                   // Filter the popular and new arrival shoes based on the selected brand
+                   filterShoesBySelectedBrand()
+
                  
                  var indexPaths: [IndexPath] = [indexPath]
                  if let previousSelectedIndexPath = previousSelectedIndexPath {
                      indexPaths.append(previousSelectedIndexPath)
                  }
-                 
+            
                  collectionView.performBatchUpdates {
                      collectionView.reloadItems(at: indexPaths)
+//                     filterShoesBySelectedBrand()
+
                  }
             
         }else if collectionView == popularShoesCollectionView {
             print("Seletect")
             let vc = UIStoryboard.mainStoryBoard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
             vc?.obj = popular_shoses[indexPath.row]
+            vc?.push()
+        } else {
+            let vc = UIStoryboard.mainStoryBoard.instantiateViewController(withIdentifier: "DetailsVC") as? DetailsVC
+            vc?.obj = new_arrival_shoses[indexPath.row]
             vc?.push()
         }
 
@@ -310,94 +392,6 @@ class CollectionViewAdjusetHeight : UICollectionView {
 }
 
 
-import FirebaseFirestore
-
-import Foundation
-
-struct ShoeModel: Codable {
-    let Description: String
-    let Gender: String
-    let colors: [Color]
-    let shoseId : String
-    let images: [String]
-    let isNewArrival: Bool
-    let isPopular: Bool
-    let isWishList: Bool
-    let price: String
-    let shoseBrand: String
-    let title: String
-}
-
-struct Color: Codable {
-    let codeColor: String
-    let id: Int
-    let name: String
-    let avaible_sizes_categories: [SizeCategory]
-
-}
-
-struct SizeCategory: Codable {
-    let name: String
-    let values: [Size]
-}
-
-struct Size: Codable {
-    let id: String
-    let value: Int
-}
 
 
 
-class ShoeService {
-    private let db = Firestore.firestore()
-    
-    static let shared = ShoeService()
-    
-    func fetchShoe(withId id: String, completion: @escaping (Result<ShoeModel, Error>) -> Void) {
-        let docRef = db.collection("shoses").document(id)
-        
-        docRef.getDocument { (document, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let document = document, document.exists, let data = document.data() else {
-                completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Document does not exist."])))
-                return
-            }
-            
-            do {
-                let shoe = try Firestore.Decoder().decode(ShoeModel.self, from: data)
-                completion(.success(shoe))
-            } catch {
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    func fetchAllShoes(completion: @escaping (Result<[ShoeModel], Error>) -> Void) {
-          db.collection("shoses").getDocuments { (querySnapshot, error) in
-              if let error = error {
-                  completion(.failure(error))
-                  return
-              }
-              
-              guard let documents = querySnapshot?.documents else {
-                  completion(.failure(NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No documents found."])))
-                  return
-              }
-              
-              do {
-                  // Map documents to ShoeModel
-                  let shoes = try documents.map { document -> ShoeModel in
-                      let data = document.data()
-                      return try Firestore.Decoder().decode(ShoeModel.self, from: data)
-                  }
-                  completion(.success(shoes))
-              } catch {
-                  completion(.failure(error))
-              }
-          }
-      }
-}

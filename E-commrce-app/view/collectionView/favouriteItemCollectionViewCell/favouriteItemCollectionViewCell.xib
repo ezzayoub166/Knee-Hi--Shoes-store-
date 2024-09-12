@@ -152,6 +152,7 @@
             <connections>
                 <outlet property="color_one" destination="K1F-yi-DCy" id="Obr-LS-Mgi"/>
                 <outlet property="color_tow" destination="Dkp-6p-D5H" id="szl-Kv-66Z"/>
+                <outlet property="favBtn" destination="jz9-uu-nmu" id="Qz9-zy-BEL"/>
                 <outlet property="imageCover" destination="4gd-Yd-mSz" id="zim-TR-Lbp"/>
                 <outlet property="price_shose" destination="tpj-PZ-w1a" id="IJu-LI-NEp"/>
                 <outlet property="title_shoes" destination="4PB-EG-SCI" id="OGH-zu-xLb"/>

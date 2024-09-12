@@ -12,9 +12,17 @@ class ColorCell : UICollectionViewCell{
     
     @IBOutlet weak var colorView: UIView!
     
-    func configure(model : Color){
+    func configure(model : Color,selected : Bool){
         if let view = colorView {
             view.backgroundColor = model.codeColor.color_
+            if selected {
+                colorView.borderColor = .gray
+                colorView.borderWidth = 3
+            }else {
+                colorView.borderColor = .clear
+                colorView.borderWidth = 0
+            }
+
             
         }else{
             print("nill")
@@ -22,3 +30,4 @@ class ColorCell : UICollectionViewCell{
     }
     
 }
+

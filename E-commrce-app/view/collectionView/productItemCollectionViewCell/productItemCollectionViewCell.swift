@@ -35,6 +35,7 @@ class productItemCollectionViewCell: UICollectionViewCell {
     
     func configure(model : ShoeModel){
         self.img_shose.sd_setImage(with: URL(string: model.images[0]))
+        self.img_shose.contentMode = .scaleAspectFit
         self.title_shose.text = model.title
         self.price_shose.text = model.price + " $"
         

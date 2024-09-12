@@ -22,16 +22,19 @@ class favouriteItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var color_tow: UIView!
     
-    func configure(model : Shose_model){
+    @IBOutlet weak var favBtn: UIButton!
+    
+    
+    func configure(model : ShoeModel){
         imageCover.sd_setImage(with: URL(string: model.images[0]))
         title_shoes.text = model.title
-        price_shose.text = model.price! + " $"
+        price_shose.text = model.price + " $"
         if(model.colors.count == 1){
-            color_one.backgroundColor = model.colors[0].codeColor?.color_
+            color_one.backgroundColor = model.colors[0].codeColor.color_
             color_tow.isHidden = true
         }else if (model.colors.count > 1 ){
-            color_one.backgroundColor = model.colors[0].codeColor?.color_
-            color_tow.backgroundColor = model.colors[1].codeColor?.color_
+            color_one.backgroundColor = model.colors[0].codeColor.color_
+            color_tow.backgroundColor = model.colors[1].codeColor.color_
         }
     }
     

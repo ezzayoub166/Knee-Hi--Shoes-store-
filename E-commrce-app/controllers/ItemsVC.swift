@@ -12,7 +12,9 @@ class ItemsVC: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var arry_of_shoses : [Shose_model] = []
+    var arry_of_shoses : [ShoeModel] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class ItemsVC: UIViewController {
     }
 }
 
+//MARK: - Main Functions in View Controller...
 extension ItemsVC {
     private func setupView(){
         setUpCollectionView()
@@ -41,12 +44,16 @@ extension ItemsVC {
         
     }
     private func fetchData(){
-        fetchPopularProducts()
         
     }
     private func localized(){
         
     }
+}
+
+//MARK: - for the other Fucntions ..
+extension ItemsVC {
+    
     private func setUpCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -55,42 +62,107 @@ extension ItemsVC {
         
     }
     
-    private func fetchPopularProducts(){
-        self.arry_of_shoses.removeAll()
-//        self.popular_indictor.startAnimating()
-        Requests.getProducts(completion: { result in
-            switch result {
-            case .success(let shoses):
-                self.arry_of_shoses = shoses
-
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-            case .failure(let failure):
-                print(failure.localizedDescription)
+    
+//    @objc func favoriteButtonTapped(_ sender: UIButton) {
+//        let buttonPosition = sender.convert(CGPoint.zero, to: collectionView)
+//        if let indexPath = collectionView.indexPathForItem(at: buttonPosition) {
+//            let shoe = arry_of_shoses[indexPath.row]
+//            
+////            if sender.isSelected {
+////                ShoeService.shared.removeFromFavorites(shoeID: shoe.shoseId)
+////            } else {
+////                try? ShoeService.shared.addToFavorites(shoe: shoe)
+////            }
+//            
+//            // Update the appearance based on the new isSelected state
+//             if sender.isSelected {
+//                 sender.tintColor = UIColor.red
+//                 sender.setImage(UIImage(named: "favorite_filled_icon"), for: .normal)
+//                 // Add the shoe to favorites
+//                 try? ShoeService.shared.addToFavorites(shoe: shoe)
+//             } else {
+//                 sender.tintColor = UIColor.gray
+//                 sender.setImage(UIImage(named: "favorite_outline_icon"), for: .normal)
+//                 // Remove the shoe from favorites
+//                 ShoeService.shared.removeFromFavorites(shoeID: shoe.shoseId)
+//             }
+//            
+//            sender.isSelected = !sender.isSelected
+//        }
+//    }
+    
+    @objc func favoriteButtonTapped(_ sender: UIButton) {
+        let shoe = arry_of_shoses[sender.tag]
         
-            }
-        }, attribute: "isPopular", limit: 100)
-        
+        sender.isSelected.toggle()
+        if sender.isSelected {
+            // Shoe added to favorites
+            sender.tintColor = UIColor.red
+            sender.setImage(UIImage(named: "favorite_filled_icon"), for: .normal)
+            try? ShoeService.shared.addToFavorites(shoe: shoe)
+        } else {
+            // Shoe removed from favorites
+            sender.tintColor = UIColor.gray
+            sender.setImage(UIImage(named: "favorite_outline_icon"), for: .normal)
+            ShoeService.shared.removeFromFavorites(shoeID: shoe.shoseId)
+        }
     }
-}
 
-extension ItemsVC : UICollectionViewDataSource , UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arry_of_shoses.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favouriteItemCollectionViewCell.identifier, for: indexPath) as! favouriteItemCollectionViewCell
-        let obj = arry_of_shoses[indexPath.row]
-        print(obj.colors.map{print($0.name)})
-        cell.configure(model: arry_of_shoses[indexPath.row])
-        return cell
-    }
     
 }
 
+extension ItemsVC : UICollectionViewDataSource , UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arry_of_shoses.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let shoe = arry_of_shoses[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favouriteItemCollectionViewCell.identifier, for: indexPath) as! favouriteItemCollectionViewCell
+        
+        // Configure the shoe in the cell
+        cell.configure(model: shoe)
+        
+        // Check if the shoe is already in favorites
+        ShoeService.shared.isShoeInFavorites(shoeID: shoe.shoseId) { isFavorite in
+            cell.favBtn.isSelected = isFavorite
+            if isFavorite {
+                cell.favBtn.tintColor = UIColor.red
+                cell.favBtn.setImage(UIImage(named: "favorite_filled_icon"), for: .normal)
+            } else {
+                cell.favBtn.tintColor = UIColor.gray
+                cell.favBtn.setImage(UIImage(named: "favorite_outline_icon"), for: .normal)
+            }
+        }
+        
+        // Add action for when the favorite button is tapped
+        cell.favBtn.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
+        cell.favBtn.tag = indexPath.row
+        
+        return cell
+    }
+
+    
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: favouriteItemCollectionViewCell.identifier, for: indexPath) as! favouriteItemCollectionViewCell
+//        var  shoe = arry_of_shoses[indexPath.row]
+//        ShoeService.shared.isShoeInFavorites(shoeID: shoe.shoseId) { isFavorite in
+//               cell.favBtn.isSelected = isFavorite // Update UI accordingly
+//                
+//           }
+//           
+//        cell.favBtn.addTarget(self, action: #selector(favoriteButtonTapped(_:)), for: .touchUpInside)
+//        cell.configure(model: shoe)
+//        return cell
+//    }
+    
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+
 extension ItemsVC : UICollectionViewDelegateFlowLayout {
-    // MARK: - UICollectionViewDelegateFlowLayout
 
      func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
          let padding: CGFloat = 20 // 10 points for each side

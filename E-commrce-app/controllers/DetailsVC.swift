@@ -13,6 +13,7 @@ class DetailsVC: UIViewController {
     
     //    @IBOutlet weak var imagesColledtionView: UICollectionView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var title_lbl: UILabel!
     
     @IBOutlet weak var price_lbl: UILabel!
@@ -26,72 +27,7 @@ class DetailsVC: UIViewController {
     
     var idDocument : String?
     
-    
-    //Some Tests
-    let db = Firestore.firestore()
-    
-    
-    //
-    //
-    //
-    //
-    //    var obj = Shose_model(
-    //
-    //        title: "Nike", shoseId: "1",
-    //        price: "199$",
-    //        description: "Test Test Test Test Test Test Test Test Test Test Test Test Test Test",
-    //        isPopular: false,
-    //        isNewArrival: true,
-    //        isWishList: false,
-    //        shose_brand: "ADDIDS",
-    //        gender: Gender.Female,
-    //        colors: [
-    //            RadioModle(
-    //                id: 1,
-    //                name: "Red",
-    //                codeColor: "#1685D4",
-    //                avaible_sizes_categories: [
-    //                    AvalibleSizeType(name: TypeSizeEnum.EU,
-    //                                     values: [
-    //                                        Size_Item_model(id: "223", values: 22),
-    //                                        Size_Item_model(id: "3e32", values: 23),
-    //                                        Size_Item_model(id: "wew", values: 24),
-    //                                     ]
-    //                                    ),
-    //                    AvalibleSizeType(name: TypeSizeEnum.UK,
-    //                                     values: [
-    //                                        Size_Item_model(id: "223", values: 25),
-    //                                        Size_Item_model(id: "3e32", values: 26),
-    //                                        Size_Item_model(id: "wew", values: 27),
-    //                                     ]
-    //                                    ),]),
-    //
-    //            RadioModle(
-    //                id: 2,
-    //                name: "Green",
-    //                codeColor: "#7DDBDA",
-    //                avaible_sizes_categories: [
-    //                    AvalibleSizeType(name: TypeSizeEnum.EU,
-    //                                     values: [
-    //                                        Size_Item_model(id: "223", values: 28),
-    //                                        Size_Item_model(id: "3e32", values: 29),
-    //                                        Size_Item_model(id: "wew", values: 30),
-    //                                     ]
-    //                                    ),
-    //
-    //                    AvalibleSizeType(name: TypeSizeEnum.US,
-    //                                     values: [
-    //                                        Size_Item_model(id: "232", values: 33),
-    //                                        Size_Item_model(id: "wqws", values: 44),
-    //                                        Size_Item_model(id: "dfdf", values: 55),
-    //                                     ]
-    //                                    )
-    //
-    //                ]),
-    //        ],  images:[]
-    //    )
-    
-    
+
     
     //MARK: - IBOutlet
     @IBOutlet weak var colorCollectionView: UICollectionView!
@@ -159,37 +95,6 @@ class DetailsVC: UIViewController {
         fetchData()
         loclized()
         
-        //        guard let id = obj?.shoseId else {
-        //            print("HAPPENED ERROR: Shoe ID is nil")
-        //            return
-        //        }
-        
-        //        print(id)
-        //
-        //        db.collection("shoses").document(id).getDocument { snapshot, error in
-        //            if let error = error {
-        //                print("Error fetching document: \(error.localizedDescription)")
-        //                return
-        //            }
-        //
-        //            guard let data = snapshot?.data() else {
-        //                print("Document data was empty or not found.")
-        //                return
-        //            }
-        //
-        //            if let shoe = Shose_model(from: snapshot!) {
-        //                // Successfully created the shoe object
-        //                print(shoe.title!)
-        //                // Do something with the shoe object
-        //            } else {
-        //                print("Failed to initialize Shose_model from snapshot data.")
-        //            }
-        //        }
-        
-        
-        //        print(obj?.colors.map{$0.avaible_sizes_categories.map{print($0.values.map{$0.value})}})
-        
-        
     }
     
     //MARK: - viewWillLayoutSubviews
@@ -214,7 +119,8 @@ extension DetailsVC {
         customNav.callSideButton = {
             self.pop()
         }
-        makeSomeEffective()
+        scrollView.showsVerticalScrollIndicator = false
+//        makeSomeEffective()
 //        imgCover.setImage(url: obj?.images.first ?? "")
         title_lbl.text = obj?.title
         price_lbl.text = (obj?.price ?? "0") + " $"
@@ -298,14 +204,7 @@ extension DetailsVC : UICollectionViewDelegate , UICollectionViewDataSource {
             let cell : ColorCell = collectionView.dequeueCVCell(indexPath: indexPath)
             let colorModel = obj?.colors[indexPath.row]
             let selected = indexPath.row == selectedColorIndex
-            cell.configure(model: colorModel!)
-            if selected {
-                cell.colorView.borderColor = .darkGray
-                cell.colorView.borderWidth = 1
-            }else {
-                cell.colorView.borderColor = .clear
-                cell.colorView.borderWidth = 0
-            }
+            cell.configure(model: colorModel! , selected :selected)
             return cell
         }else if collectionView == sizesStringCollectionView {
             let cell : SizeTypeCell = collectionView.dequeueCVCell(indexPath: indexPath)
